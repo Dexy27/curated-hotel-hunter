@@ -11,15 +11,10 @@
     {
       "title": "Curaçao Avila Beach Hotel",
       "location": "Find 002 · August · Curaçao",
-      "price": "Check August rates",
-      "description": "August is a great time for a beach break in Curaçao. The island lies south of the main Atlantic hurricane belt, and Avila can offer better value in August.",
-      "priceNote": "Rates vary by date and room type.",
+      "price": "€2,462 for 10 nights",
+      "description": "7–17 August 2027 · Free cancellation before 8 July 2027 if plans change.",
+      "priceNote": "Observed Booking.com rate, including taxes and fees. Pay the property before arrival.",
       "discoveryPage": "curacao.html"
-    },
-    {
-      "title": "Test Hotel",
-      "price": "€1,250 for 7 nights",
-      "description": "Sample deal to test the editor."
     }
   ]
 }
