@@ -23,7 +23,7 @@ content:
             type: string
             required: true
           - name: location
-            label: Destination
+            label: Destination or card label
             type: string
           - name: price
             label: Price
@@ -35,6 +35,13 @@ content:
             description: "Include stay dates, room type, inclusions and any important booking conditions."
             type: text
             required: true
+          - name: priceNote
+            label: Price or availability note
+            type: text
+          - name: discoveryPage
+            label: Discovery article
+            description: "Optional. The filename of an existing discovery article, e.g. maldives.html."
+            type: string
           - name: photos
             label: Hotel photos
             type: object

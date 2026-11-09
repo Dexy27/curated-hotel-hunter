@@ -41,8 +41,19 @@ function makeDealCard(deal) {
     }
   }
 
+  const discoveryPage = typeof deal.discoveryPage === "string" ? deal.discoveryPage.trim() : "";
+  const hasDiscovery = /^[a-z0-9-]+\.html$/.test(discoveryPage);
+  if (hasDiscovery) appendText(card, "p", deal.description, "deal-description");
   appendText(card, "div", deal.price, "price");
-  appendText(card, "p", deal.description, "deal-description");
+  if (!hasDiscovery) appendText(card, "p", deal.description, "deal-description");
+  appendText(card, "p", deal.priceNote, "small");
+
+  if (hasDiscovery) {
+    const link = document.createElement("a");
+    link.href = discoveryPage;
+    link.textContent = "Read discovery →";
+    card.append(link);
+  }
 
   const bookingUrl = typeof deal.bookingUrl === "string" ? parseUrl(deal.bookingUrl) : null;
   if (bookingUrl?.protocol === "https:") {
@@ -63,11 +74,10 @@ async function loadHotelDeals() {
   const { deals } = await response.json();
   if (!Array.isArray(deals)) return;
 
-  for (const deal of deals) {
-    if (typeof deal?.title === "string" && deal.title.trim()) {
-      hotelFinds.append(makeDealCard(deal));
-    }
-  }
+  const cards = deals
+    .filter(deal => typeof deal?.title === "string" && deal.title.trim())
+    .map(makeDealCard);
+  hotelFinds.replaceChildren(...cards);
 }
 
-loadHotelDeals().catch(error => console.warn("Unable to load additional hotel deals.", error));
+loadHotelDeals().catch(error => console.warn("Unable to load hotel deals.", error));

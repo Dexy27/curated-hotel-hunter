@@ -1,6 +1,22 @@
 {
   "deals": [
     {
+      "title": "SAii Lagoon Maldives",
+      "location": "Find 001 · Christmas & New Year · Documented discovery",
+      "price": "Approx. €3,588",
+      "description": "27 Dec 2026 – 6 Jan 2027 · 10 nights · 2 adults · half board",
+      "priceNote": "Historical booked price, excluding mandatory speedboat transfers. Not a live offer.",
+      "discoveryPage": "maldives.html"
+    },
+    {
+      "title": "The Royal Sea Aquarium Resort, Curaçao",
+      "location": "Find 002 · Easter · Price observed",
+      "price": "From €2,831",
+      "description": "18–28 March 2027 · 10 nights · 2 adults · sea-view junior suite",
+      "priceNote": "Observed non-refundable rate; availability and pricing require rechecking.",
+      "discoveryPage": "curacao.html"
+    },
+    {
       "title": "Test Hotel",
       "price": "€1,250 for 7 nights",
       "description": "Sample deal to test the editor."
