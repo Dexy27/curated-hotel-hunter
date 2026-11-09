@@ -22,6 +22,7 @@ function parseUrl(value, base) {
 function makeDealCard(deal) {
   const card = document.createElement("article");
   card.className = "card";
+  card.id = deal.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   appendText(card, "div", deal.location, "tag");
   appendText(card, "h3", deal.title);
 
@@ -78,6 +79,9 @@ async function loadHotelDeals() {
     .filter(deal => typeof deal?.title === "string" && deal.title.trim())
     .map(makeDealCard);
   hotelFinds.replaceChildren(...cards);
+
+  const target = cards.find(card => `#${card.id}` === window.location.hash);
+  target?.scrollIntoView();
 }
 
 loadHotelDeals().catch(error => console.warn("Unable to load hotel deals.", error));
