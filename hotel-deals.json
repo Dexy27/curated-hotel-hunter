@@ -1,3 +1,9 @@
 {
-  "deals": []
+  "deals": [
+    {
+      "title": "Test Hotel",
+      "price": "€1,250 for 7 nights",
+      "description": "Sample deal to test the editor."
+    }
+  ]
 }
