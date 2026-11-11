@@ -1,4 +1,4 @@
-"use strict";
+import { displayDate, loadDeals, offerStatus } from "./offer-status.mjs";
 
 const hotelFinds = document.querySelector("[data-hotel-deals]");
 
@@ -19,14 +19,14 @@ function parseUrl(value, base) {
   }
 }
 
-function makeDealCard(deal) {
+function makeDealCard(deal, status, onFeature = false) {
   const card = document.createElement("article");
   card.className = "card";
   card.id = deal.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   appendText(card, "div", deal.location, "tag");
-  appendText(card, "h3", deal.title);
+  if (!onFeature) appendText(card, "h3", deal.title);
 
-  if (Array.isArray(deal.photos)) {
+  if (!onFeature && Array.isArray(deal.photos)) {
     for (const photo of deal.photos) {
       if (typeof photo?.image !== "string") continue;
 
@@ -47,9 +47,15 @@ function makeDealCard(deal) {
   if (hasDiscovery) appendText(card, "p", deal.description, "deal-description");
   appendText(card, "div", deal.price, "price");
   if (!hasDiscovery) appendText(card, "p", deal.description, "deal-description");
+  if (status.showCancellation) {
+    appendText(card, "p", `Free cancellation before ${displayDate(status.cancellationCutoff)}.`);
+  }
   appendText(card, "p", deal.priceNote, "small");
+  if (!status.historical && status.lastVerified) {
+    appendText(card, "p", `Last checked ${displayDate(status.lastVerified)}`, "small");
+  }
 
-  if (hasDiscovery) {
+  if (hasDiscovery && !onFeature) {
     const link = document.createElement("a");
     link.href = discoveryPage;
     link.textContent = "Read discovery →";
@@ -60,28 +66,35 @@ function makeDealCard(deal) {
   if (bookingUrl?.protocol === "https:") {
     const link = document.createElement("a");
     link.href = bookingUrl.href;
-    link.rel = "sponsored";
-    link.textContent = "View hotel →";
+    if (hasDiscovery && !onFeature) link.className = "deal-booking-link";
+    if (!onFeature) link.rel = "sponsored";
+    link.textContent = onFeature ? "Check availability →" : "View hotel →";
     card.append(link);
   }
 
   return card;
 }
 
-async function loadHotelDeals() {
-  const response = await fetch("/hotel-deals.json");
-  if (!response.ok) throw new Error(`Hotel deals returned HTTP ${response.status}`);
+async function renderOffers() {
+  const deals = await loadDeals();
+  const visibleDeals = deals.map(deal => ({ deal, status: offerStatus(deal) }))
+    .filter(({ status }) => !status.expired && !status.retired);
 
-  const { deals } = await response.json();
-  if (!Array.isArray(deals)) return;
+  if (hotelFinds) {
+    const cards = visibleDeals.map(({ deal, status }) => makeDealCard(deal, status));
+    hotelFinds.replaceChildren(...cards);
+    const target = cards.find(card => `#${card.id}` === window.location.hash);
+    target?.scrollIntoView();
+  }
 
-  const cards = deals
-    .filter(deal => typeof deal?.title === "string" && deal.title.trim())
-    .map(makeDealCard);
-  hotelFinds.replaceChildren(...cards);
-
-  const target = cards.find(card => `#${card.id}` === window.location.hash);
-  target?.scrollIntoView();
+  for (const section of document.querySelectorAll("[data-feature-offer]")) {
+    const offer = visibleDeals.find(({ deal, status }) => (
+      !status.historical && deal.discoveryPage === section.dataset.featureOffer
+    ));
+    if (!offer) continue;
+    section.querySelector("[data-offer-content]").append(makeDealCard(offer.deal, offer.status, true));
+    section.hidden = false;
+  }
 }
 
-loadHotelDeals().catch(error => console.warn("Unable to load hotel deals.", error));
+renderOffers().catch(error => console.warn("Unable to load hotel deals.", error));

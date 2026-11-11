@@ -124,3 +124,8 @@
     line-height: 1.4;
   }
 }
+
+.deal-booking-link {
+  display: block;
+  margin-top: 8px;
+}

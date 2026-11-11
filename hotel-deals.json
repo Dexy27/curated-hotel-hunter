@@ -6,15 +6,20 @@
       "price": "Approx. €3,588 total for 2 adults",
       "description": "27 Dec 2026 – 6 Jan 2027 · 10 nights · 2 adults · half board",
       "priceNote": "Historical booked price, excluding mandatory speedboat transfers. Not a live offer.",
-      "discoveryPage": "maldives.html"
+      "discoveryPage": "maldives.html",
+      "historical": true
     },
     {
       "title": "Curaçao Avila Beach Hotel",
       "location": "Find 002 · August · Curaçao",
       "price": "€2,462 total for 2 adults · 10 nights",
-      "description": "7–17 August 2027 · Free cancellation before 8 July 2027 if plans change.",
+      "description": "7–17 August 2027 · 10 nights · Beachfront stay in Willemstad.",
       "priceNote": "Observed Booking.com rate, including taxes and fees. Pay the property before arrival.",
-      "discoveryPage": "curacao.html"
+      "discoveryPage": "curacao.html",
+      "checkIn": "2027-08-07",
+      "lastVerified": "2026-11-09",
+      "cancellationCutoff": "2027-07-08",
+      "bookingUrl": "https://www.booking.com/hotel/cw/avila.html?checkin=2027-08-07&checkout=2027-08-17&group_adults=2&group_children=0&no_rooms=1"
     },
     {
       "title": "Riu Palace Mauritius",
@@ -22,23 +27,32 @@
       "price": "€3,632 total for 2 adults · 10 nights",
       "description": "25 April – 5 May 2027 · 2 adults · Adults-only, all-inclusive beachfront resort in Le Morne. Late April and May are a good shoulder-season window for fewer crowds and better hotel rates.",
       "priceNote": "Booking.com showed €3,632 total including taxes and fees, down from its displayed reference price of €5,544 (€1,912 less). Rate observed on 9 November 2026. Prices and availability may change.",
-      "bookingUrl": "https://www.booking.com/hotel/mu/riu-palace-mauritius-all-inclusive-adults-only.html?checkin=2027-04-25&checkout=2027-05-05&group_adults=2&group_children=0&no_rooms=1"
+      "bookingUrl": "https://www.booking.com/hotel/mu/riu-palace-mauritius-all-inclusive-adults-only.html?checkin=2027-04-25&checkout=2027-05-05&group_adults=2&group_children=0&no_rooms=1",
+      "checkIn": "2027-04-25",
+      "lastVerified": "2026-11-09"
     },
     {
       "title": "Kacha Resort & Spa, Koh Chang",
       "location": "Find 004 · Easter week · Koh Chang, Thailand",
       "price": "€1,231 total for 2 adults · 7 nights · 63% off",
       "description": "24–31 March 2027 · 7 nights · 2 adults · Beachfront Chalet with a sea view and balcony at White Sand Beach. Breakfast included.",
-      "priceNote": "Booking.com displayed 63% off its reference price on 9 November 2026. This public rate includes taxes and charges and requires no Genius membership. Free cancellation before 10 March 2027. Pay nothing until 8 March 2027. Booking.com also shows special Genius member prices on select room types. Price and availability may change.",
-      "bookingUrl": "https://www.booking.com/hotel/th/koh-chang-kacha-resort-spa.en-gb.html?checkin=2027-03-24&checkout=2027-03-31&group_adults=2&no_rooms=1&group_children=0&selected_currency=EUR"
+      "priceNote": "Booking.com displayed 63% off its reference price on 9 November 2026. This public rate includes taxes and charges and requires no Genius membership. Advance payment was scheduled for 8 March 2027 when checked. Booking.com also shows special Genius member prices on select room types. Price and availability may change.",
+      "bookingUrl": "https://www.booking.com/hotel/th/koh-chang-kacha-resort-spa.en-gb.html?checkin=2027-03-24&checkout=2027-03-31&group_adults=2&no_rooms=1&group_children=0&selected_currency=EUR",
+      "checkIn": "2027-03-24",
+      "lastVerified": "2026-11-09",
+      "cancellationCutoff": "2027-03-10"
     },
     {
       "title": "Vilamendhoo Island Resort & Spa",
       "location": "Find 005 · May 2027 · Maldives",
       "price": "€2,174 total for 2 adults · 7 nights",
-      "description": "15–22 May 2027 · Adjacent Beachfront Villa with sea view · Full board included · Free cancellation before 12 May 2027.",
+      "description": "15–22 May 2027 · Adjacent Beachfront Villa with sea view · Full board included.",
       "priceNote": "Observed Booking.com Partner Offer, including taxes and fees. Advance payment required. Booking changes unavailable. Rates and availability can change. Check the seaplane transfer cost separately.",
-      "discoveryPage": "vilamendhoo.html"
+      "discoveryPage": "vilamendhoo.html",
+      "checkIn": "2027-05-15",
+      "lastVerified": "2026-11-11",
+      "cancellationCutoff": "2027-05-12",
+      "bookingUrl": "https://www.booking.com/hotel/mv/vilamendhoo-island-resort-amp-spa.html?checkin=2027-05-15&checkout=2027-05-22&group_adults=2&group_children=0&no_rooms=1"
     }
   ]
 }

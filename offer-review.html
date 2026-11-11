@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Offer Review | Curated Hotel Hunter</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="offer-review.js"></script>
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="index.html">CHH<span>CURATED HOTEL HUNTER</span></a><nav aria-label="Main navigation"><a href="hotel-finds.html">Hotel Finds</a></nav></div></header>
+<main>
+  <h1>Offer review</h1>
+  <p class="lead">Review prices, availability and terms every seven days. Dates use Madrid time.</p>
+  <p>After checking an offer, open Hotel Deals in the editor and update its <strong>Last verified</strong> date. Use <strong>Remove from active offers</strong> if the deal is gone.</p>
+  <p><a class="btn secondary" href="https://app.pagescms.org/">Open Pages CMS</a></p>
+  <p id="review-status" role="status">Loading offers…</p>
+  <section aria-labelledby="review-due" hidden>
+    <h2 id="review-due">Needs review</h2>
+    <div class="cards" id="review-queue"></div>
+  </section>
+  <details id="current-offers" hidden>
+    <summary>Current offers with no checks due</summary>
+    <div class="cards" id="review-current"></div>
+  </details>
+  <details id="inactive-offers" hidden>
+    <summary>Expired and retired offers</summary>
+    <div class="cards" id="review-inactive"></div>
+  </details>
+</main>
+</body>
+</html>

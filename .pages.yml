@@ -38,6 +38,46 @@ content:
           - name: priceNote
             label: Price or availability note
             type: text
+          - name: checkIn
+            label: Check-in date
+            description: "The active offer disappears when this date begins in Madrid. Fill this in for live offers."
+            type: date
+            default: ""
+            options:
+              format: yyyy-MM-dd
+          - name: bookingCutoff
+            label: First day to hide the offer
+            description: "Optional. Use this if the booking window closes before check-in."
+            type: date
+            default: ""
+            options:
+              format: yyyy-MM-dd
+          - name: cancellationCutoff
+            label: Free cancellation cutoff
+            description: "Enter the first day free cancellation is no longer advertised. Leave blank if unavailable."
+            type: date
+            default: ""
+            options:
+              format: yyyy-MM-dd
+          - name: lastVerified
+            label: Last verified
+            description: "Update after confirming the public price, availability and terms."
+            type: date
+            default: ""
+            options:
+              format: yyyy-MM-dd
+          - name: promoted
+            label: Currently promoting
+            description: "Move this offer higher in the review list when a check is due."
+            type: boolean
+          - name: retired
+            label: Remove from active offers
+            description: "Turn on if the rate is gone or the offer is no longer worth featuring."
+            type: boolean
+          - name: historical
+            label: Historical discovery
+            description: "Use for a documented past price. It stays out of the active-offer review list."
+            type: boolean
           - name: discoveryPage
             label: Discovery article
             description: "Optional. The filename of an existing discovery article, e.g. maldives.html."
