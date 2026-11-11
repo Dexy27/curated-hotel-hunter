@@ -129,3 +129,43 @@
   display: block;
   margin-top: 8px;
 }
+
+.featured-stay-with-offer {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: start;
+  gap: clamp(16px, 3vw, 30px);
+  padding: clamp(16px, 3vw, 28px);
+  scroll-margin-top: 140px;
+}
+.featured-stay-with-offer > div > p {
+  margin: 8px 0;
+}
+.featured-stay-offer {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e8dfd6;
+}
+.featured-stay-offer .card {
+  border: 0;
+  padding: 0;
+}
+.featured-stay-offer .card p {
+  margin-bottom: 8px;
+}
+.featured-stay-offer .card .small {
+  font-size: 12px;
+}
+.featured-stay-offer .price {
+  font-size: clamp(22px, 4vw, 28px);
+}
+.stay-offer-photos {
+  margin-top: 12px;
+}
+@media (max-width: 750px) {
+  .featured-stay-with-offer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .featured-stay-with-offer img {
+    aspect-ratio: 16 / 9;
+  }
+}

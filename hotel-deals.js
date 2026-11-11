@@ -22,9 +22,11 @@ function parseUrl(value, base) {
 function makeDealCard(deal, status, onFeature = false) {
   const card = document.createElement("article");
   card.className = "card";
-  card.id = deal.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  appendText(card, "div", deal.location, "tag");
-  if (!onFeature) appendText(card, "h3", deal.title);
+  if (!onFeature) {
+    card.id = deal.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    appendText(card, "div", deal.location, "tag");
+    appendText(card, "h3", deal.title);
+  }
 
   if (!onFeature && Array.isArray(deal.photos)) {
     for (const photo of deal.photos) {
@@ -80,14 +82,18 @@ async function renderOffers() {
   const visibleDeals = deals.map(deal => ({ deal, status: offerStatus(deal) }))
     .filter(({ status }) => !status.expired && !status.retired);
 
+  const featureSections = [...document.querySelectorAll("[data-feature-offer]")];
   if (hotelFinds) {
-    const cards = visibleDeals.map(({ deal, status }) => makeDealCard(deal, status));
+    const featurePages = new Set(featureSections.map(section => section.dataset.featureOffer));
+    const cards = visibleDeals
+      .filter(({ deal, status }) => status.historical || !featurePages.has(deal.discoveryPage))
+      .map(({ deal, status }) => makeDealCard(deal, status));
     hotelFinds.replaceChildren(...cards);
-    const target = cards.find(card => `#${card.id}` === window.location.hash);
+    const target = document.getElementById(window.location.hash.slice(1));
     target?.scrollIntoView();
   }
 
-  for (const section of document.querySelectorAll("[data-feature-offer]")) {
+  for (const section of featureSections) {
     const offer = visibleDeals.find(({ deal, status }) => (
       !status.historical && deal.discoveryPage === section.dataset.featureOffer
     ));
