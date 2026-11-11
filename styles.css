@@ -10,3 +10,61 @@
 .deal-description {
   white-space: pre-line;
 }
+
+.stay-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  padding-bottom: 40px;
+}
+.stay-feature figure {
+  margin: 0;
+}
+.stay-feature figure img {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.stay-intro img {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-position: center 60%;
+}
+.stay-feature figcaption,
+.stay-source {
+  color: #6e625b;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.stay-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 20px;
+}
+.stay-gallery img {
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+.stay-gallery figure:last-child {
+  grid-column: 1 / -1;
+}
+.stay-gallery figure:last-child img {
+  aspect-ratio: 2 / 1;
+}
+.stay-details {
+  max-width: 720px;
+}
+#stay-photos {
+  scroll-margin-top: 140px;
+}
+@media (max-width: 750px) {
+  .stay-intro,
+  .stay-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .stay-gallery figure:last-child img {
+    aspect-ratio: 4 / 3;
+  }
+}
