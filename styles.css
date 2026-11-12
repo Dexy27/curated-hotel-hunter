@@ -169,3 +169,11 @@
     aspect-ratio: 16 / 9;
   }
 }
+
+.stay-recommendation {
+  margin: 8px 0;
+}
+
+.stay-recommendation ul {
+  margin: 2px 0 0;
+}
