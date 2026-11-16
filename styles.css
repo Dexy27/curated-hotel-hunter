@@ -181,6 +181,7 @@
 .punta-cana-gallery .punta-cana-sunset {
   width: min(100%, 420px);
 }
-.punta-cana-gallery .punta-cana-sunset img {
-  aspect-ratio: 3 / 4;
+.stay-gallery.punta-cana-gallery figure img {
+  aspect-ratio: auto;
+  object-fit: contain;
 }
