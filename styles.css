@@ -177,3 +177,10 @@
 .stay-recommendation ul {
   margin: 2px 0 0;
 }
+
+.punta-cana-gallery .punta-cana-sunset {
+  width: min(100%, 420px);
+}
+.punta-cana-gallery .punta-cana-sunset img {
+  aspect-ratio: 3 / 4;
+}

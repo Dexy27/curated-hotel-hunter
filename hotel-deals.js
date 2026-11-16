@@ -57,6 +57,19 @@ function makeDealCard(deal, status, onFeature = false) {
     appendText(card, "p", `Last checked ${displayDate(status.lastVerified)}`, "small");
   }
 
+  if (!onFeature && Array.isArray(deal.highlights) && deal.highlights.length) {
+    appendText(card, "strong", "Highlights");
+    const highlights = document.createElement("ul");
+    for (const highlight of deal.highlights) {
+      const item = document.createElement("li");
+      appendText(item, "strong", highlight);
+      highlights.append(item);
+    }
+    card.append(highlights);
+  }
+  if (!onFeature) appendText(card, "p", deal.stayNote);
+  appendText(card, "p", deal.valueNote);
+
   if (hasDiscovery && !onFeature) {
     const link = document.createElement("a");
     link.href = discoveryPage;
