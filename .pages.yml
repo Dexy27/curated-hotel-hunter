@@ -66,6 +66,13 @@ content:
             default: ""
             options:
               format: yyyy-MM-dd
+          - name: reviewStartOn
+            label: Review start date
+            description: "Enter the publication date for a new offer. The first weekly check is due seven days after this date."
+            type: date
+            default: ""
+            options:
+              format: yyyy-MM-dd
           - name: promoted
             label: Currently promoting
             description: "Move this offer higher in the review list when a check is due."

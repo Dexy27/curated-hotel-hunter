@@ -29,22 +29,40 @@ function daysBetween(start, end) {
   return (Date.parse(end) - Date.parse(start)) / 86_400_000;
 }
 
+function addDays(value, days) {
+  const date = new Date(value);
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
 export function offerStatus(deal, today = todayInMadrid()) {
   const checkIn = dateOnly(deal.checkIn);
   const bookingCutoff = dateOnly(deal.bookingCutoff);
   const expiresOn = [checkIn, bookingCutoff].filter(Boolean).sort()[0] ?? "";
   const lastVerified = dateOnly(deal.lastVerified);
+  const reviewStartOn = dateOnly(deal.reviewStartOn);
   const cancellationCutoff = dateOnly(deal.cancellationCutoff);
   const historical = deal.historical === true;
   const retired = deal.retired === true;
   const expired = Boolean(expiresOn && today >= expiresOn);
   const showCancellation = Boolean(cancellationCutoff && today < cancellationCutoff);
   const review = [];
+  let weeklyCheckOn = "";
 
   if (!historical && !retired && !expired) {
     if (!expiresOn) review.push("Add a check-in date or booking cutoff");
-    if (!lastVerified || lastVerified > today) review.push("Record when the offer was verified");
-    else if (daysBetween(lastVerified, today) >= 7) review.push("Price and availability check due");
+    const baseline = [reviewStartOn, lastVerified].filter(date => date && date <= today).sort().at(-1);
+    if (!baseline) {
+      review.push("Record the publication or last verified date");
+    } else {
+      const firstUncheckedDate = addDays(baseline, 7);
+      if (!expiresOn || firstUncheckedDate < expiresOn) {
+        weeklyCheckOn = firstUncheckedDate;
+        if (today >= weeklyCheckOn) review.push("Price and availability check due");
+      }
+    }
+    if (lastVerified > today) review.push("Correct the future last verified date");
+    if (reviewStartOn > today) review.push("Correct the future review start date");
     if (cancellationCutoff && !showCancellation && lastVerified < cancellationCutoff) {
       review.push("Cancellation cutoff passed. Check the current terms");
     } else if (showCancellation && daysBetween(today, cancellationCutoff) <= 7) {
@@ -53,7 +71,7 @@ export function offerStatus(deal, today = todayInMadrid()) {
     if (expiresOn && daysBetween(today, expiresOn) <= 7) review.push("Expires within 7 days");
   }
 
-  return { historical, retired, expired, expiresOn, lastVerified, cancellationCutoff, showCancellation, review };
+  return { historical, retired, expired, expiresOn, lastVerified, cancellationCutoff, showCancellation, weeklyCheckOn, review };
 }
 
 export async function loadDeals() {

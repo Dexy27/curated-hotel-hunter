@@ -31,6 +31,7 @@
       "stayNote": "We never queued for a meal during our stay. The food was just okay.",
       "valueNote": "At €2,183 for two, I think it’s good value for peak season. If the price goes higher, I’d look elsewhere.",
       "checkIn": "2027-02-11",
+      "reviewStartOn": "2026-11-16",
       "lastVerified": "2026-11-16",
       "cancellationCutoff": "2027-02-10"
     },
@@ -41,6 +42,7 @@
       "description": "7–17 August 2027 · Standard Room – Octagon · Beachfront stay in Willemstad.",
       "discoveryPage": "curacao.html",
       "checkIn": "2027-08-07",
+      "reviewStartOn": "2026-11-09",
       "lastVerified": "2026-11-16",
       "cancellationCutoff": "2027-07-08",
       "bookingUrl": "https://www.booking.com/hotel/cw/avila.html?checkin=2027-08-07&checkout=2027-08-17&group_adults=2&group_children=0&no_rooms=1"
@@ -53,6 +55,7 @@
       "priceNote": "Booking.com showed €3,632 total including taxes and fees, down from its displayed reference price of €5,544 (€1,912 less). No payment due until 21 April 2027. Price, availability and terms may change.",
       "bookingUrl": "https://www.booking.com/hotel/mu/riu-palace-mauritius-all-inclusive-adults-only.html?checkin=2027-04-25&checkout=2027-05-05&group_adults=2&group_children=0&no_rooms=1",
       "checkIn": "2027-04-25",
+      "reviewStartOn": "2026-11-09",
       "lastVerified": "2026-11-16",
       "cancellationCutoff": "2027-04-23"
     },
@@ -64,6 +67,7 @@
       "priceNote": "Booking.com showed €1,234 including taxes and fees, down from its displayed reference price of €2,203. Pay the property before arrival. Price and availability may change.",
       "bookingUrl": "https://www.booking.com/hotel/th/kc-grande-resort-spa.en-gb.html?checkin=2027-03-24&checkout=2027-03-31&group_adults=2&no_rooms=1&group_children=0&selected_currency=EUR",
       "checkIn": "2027-03-24",
+      "reviewStartOn": "2026-11-11",
       "lastVerified": "2026-11-11",
       "cancellationCutoff": "2027-03-10"
     },
@@ -75,6 +79,7 @@
       "priceNote": "Observed Booking.com Partner Offer, including taxes and fees. Advance payment required. Booking changes unavailable. Rates and availability can change. Check the seaplane transfer cost separately.",
       "discoveryPage": "vilamendhoo.html",
       "checkIn": "2027-05-15",
+      "reviewStartOn": "2026-11-11",
       "lastVerified": "2026-11-11",
       "cancellationCutoff": "2027-05-12",
       "bookingUrl": "https://www.booking.com/hotel/mv/vilamendhoo-island-resort-amp-spa.html?checkin=2027-05-15&checkout=2027-05-22&group_adults=2&group_children=0&no_rooms=1"
@@ -87,6 +92,7 @@
       "priceNote": "Public Booking.com rate including taxes and fees. The price shown was about 34% below Booking.com’s displayed reference price of €3,742. No payment due until 10 August 2027. Price, availability and terms may change.",
       "discoveryPage": "riu-jambo-zanzibar.html",
       "checkIn": "2027-08-14",
+      "reviewStartOn": "2026-11-11",
       "lastVerified": "2026-11-11",
       "cancellationCutoff": "2027-08-12",
       "bookingUrl": "https://www.booking.com/hotel/tz/riu-jambo.en-gb.html?checkin=2027-08-14&checkout=2027-08-21&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR"
@@ -99,6 +105,7 @@
       "priceNote": "Observed Booking.com price including taxes and fees, with €83 off displayed. Hillside location may not suit families with young children or guests with limited mobility. Price and availability may change. Resort transfer is not confirmed included.",
       "discoveryPage": "ao-prao-koh-samet.html",
       "checkIn": "2027-05-06",
+      "reviewStartOn": "2026-11-16",
       "lastVerified": "2026-11-15"
     }
   ]
