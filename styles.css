@@ -7,6 +7,12 @@
   border-radius: 4px;
   margin: 12px 0;
 }
+.deal-photo-captioned {
+  margin: 12px 0;
+}
+.deal-photo-captioned .deal-photo {
+  margin: 0 0 4px;
+}
 .deal-description {
   white-space: pre-line;
 }

@@ -40,7 +40,15 @@ function makeDealCard(deal, status, onFeature = false) {
       image.src = url.href;
       image.alt = typeof photo.alt === "string" ? photo.alt : "";
       image.loading = "lazy";
-      card.append(image);
+      if (typeof photo.caption === "string" && photo.caption.trim()) {
+        const figure = document.createElement("figure");
+        figure.className = "deal-photo-captioned";
+        figure.append(image);
+        appendText(figure, "figcaption", photo.caption, "small");
+        card.append(figure);
+      } else {
+        card.append(image);
+      }
     }
   }
 
