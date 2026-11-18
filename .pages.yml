@@ -35,6 +35,10 @@ content:
             description: "Include stay dates, room type, inclusions and any important booking conditions."
             type: text
             required: true
+          - name: noPrepayment
+            label: No prepayment needed
+            description: "Enable when guests can pay at the property."
+            type: boolean
           - name: priceNote
             label: Price or availability note
             type: text

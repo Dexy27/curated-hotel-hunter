@@ -69,6 +69,12 @@ function makeDealCard(deal, status, onFeature = false) {
   if (status.showCancellation) {
     appendText(card, "p", `Free cancellation before ${displayDate(status.cancellationCutoff)}.`);
   }
+  if (deal.noPrepayment === true) {
+    const payment = document.createElement("p");
+    appendText(payment, "strong", "No prepayment needed");
+    payment.append(". Pay at the property.");
+    card.append(payment);
+  }
   appendText(card, "p", deal.priceNote, "small");
   if (!status.historical && status.lastVerified) {
     appendText(card, "p", `Last checked ${displayDate(status.lastVerified)}`, "small");
