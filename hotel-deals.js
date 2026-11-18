@@ -29,6 +29,7 @@ function makeDealCard(deal, status, onFeature = false) {
   }
 
   if (!onFeature && Array.isArray(deal.photos)) {
+    const photos = document.createDocumentFragment();
     for (const photo of deal.photos) {
       if (typeof photo?.image !== "string") continue;
 
@@ -45,10 +46,18 @@ function makeDealCard(deal, status, onFeature = false) {
         figure.className = "deal-photo-captioned";
         figure.append(image);
         appendText(figure, "figcaption", photo.caption, "small");
-        card.append(figure);
+        photos.append(figure);
       } else {
-        card.append(image);
+        photos.append(image);
       }
+    }
+
+    if (photos.firstChild) card.append(photos.firstChild);
+    if (photos.firstChild) {
+      const gallery = document.createElement("details");
+      appendText(gallery, "summary", "See more photos");
+      gallery.append(photos);
+      card.append(gallery);
     }
   }
 
