@@ -57,6 +57,11 @@ function makeDealCard(deal, status, onFeature = false) {
     appendText(card, "p", `Last checked ${displayDate(status.lastVerified)}`, "small");
   }
 
+  if (!onFeature && typeof deal.recommendedFor === "string" && deal.recommendedFor.trim()) {
+    appendText(card, "strong", "Recommended for:");
+    appendText(card, "p", deal.recommendedFor);
+  }
+
   if (!onFeature && Array.isArray(deal.highlights) && deal.highlights.length) {
     appendText(card, "strong", deal.highlightsLabel || "Highlights");
     const highlights = document.createElement("ul");
