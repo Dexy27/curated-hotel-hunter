@@ -91,7 +91,11 @@ function makeDealCard(deal, status, onFeature = false) {
     }
     card.append(highlights);
   }
-  if (!onFeature) appendText(card, "p", deal.stayNote);
+  if (!onFeature && typeof deal.stayNote === "string") {
+    for (const paragraph of deal.stayNote.split(/\r?\n/)) {
+      appendText(card, "p", paragraph.trim());
+    }
+  }
   if (typeof deal.valueNote === "string" && deal.valueNote.trim()) {
     appendText(card, "strong", "CHH verdict");
     appendText(card, "p", deal.valueNote);
