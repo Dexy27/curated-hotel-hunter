@@ -67,7 +67,9 @@ function makeDealCard(deal, status, onFeature = false) {
 
   if (!onFeature && typeof deal.recommendedFor === "string" && deal.recommendedFor.trim()) {
     appendText(card, "strong", "Recommended for:");
-    appendText(card, "p", deal.recommendedFor);
+    const recommendation = document.createElement("p");
+    appendText(recommendation, "strong", deal.recommendedFor);
+    card.append(recommendation);
   }
 
   if (!onFeature && Array.isArray(deal.highlights) && deal.highlights.length) {
