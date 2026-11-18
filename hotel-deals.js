@@ -58,7 +58,7 @@ function makeDealCard(deal, status, onFeature = false) {
   }
 
   if (!onFeature && Array.isArray(deal.highlights) && deal.highlights.length) {
-    appendText(card, "strong", "Highlights");
+    appendText(card, "strong", deal.highlightsLabel || "Highlights");
     const highlights = document.createElement("ul");
     for (const highlight of deal.highlights) {
       const item = document.createElement("li");
