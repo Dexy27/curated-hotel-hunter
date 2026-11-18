@@ -1,6 +1,21 @@
 {
   "deals": [
     {
+      "title": "Kantary Bay Hotel Phuket",
+      "location": "Easter long stay · Cape Panwa, Phuket, Thailand",
+      "price": "€1,780 total for 2 adults · 14 nights",
+      "description": "15–29 March 2027 · One-Bedroom Suite with a balcony and breakfast included. Late March is still high season in Phuket, near the end of the dry season. The weather is usually warm with plenty of sunshine, and hotel rates and crowds can ease compared with the December–February peak as the wet season approaches.",
+      "priceNote": "Flexible to reschedule if plans change. The rate is non-refundable and payable online. Booking.com showed €1,780 including taxes and fees on 18 November 2026, down from its displayed reference price of €3,181 (about 44% lower). Price, availability and terms may change.",
+      "bookingUrl": "https://www.booking.com/hotel/th/kantary-bay.en-gb.html?checkin=2027-03-15&checkout=2027-03-29&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
+      "highlights": [
+        "One-bedroom suite with a balcony",
+        "Breakfast and one parking spot included"
+      ],
+      "checkIn": "2027-03-15",
+      "reviewStartOn": "2026-11-18",
+      "lastVerified": "2026-11-18"
+    },
+    {
       "title": "SAii Lagoon Maldives",
       "location": "Christmas & New Year · Documented discovery",
       "price": "Approx. €3,588 total for 2 adults",
