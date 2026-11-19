@@ -163,6 +163,12 @@ async function renderOffers() {
   const visibleDeals = deals.map(deal => ({ deal, status: offerStatus(deal) }))
     .filter(({ status }) => !status.expired && !status.retired);
 
+  for (const entry of document.querySelectorAll("[data-destination-offer]")) {
+    entry.hidden = !visibleDeals.some(({ deal, status }) => (
+      !status.historical && deal.title === entry.dataset.destinationOffer
+    ));
+  }
+
   const featureSections = [...document.querySelectorAll("[data-feature-offer]")];
   if (hotelFinds) {
     const featurePages = new Set(featureSections.map(section => section.dataset.featureOffer));
