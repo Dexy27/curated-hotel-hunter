@@ -135,3 +135,18 @@ content:
             type: image
             options:
               rename: safe
+          - name: banner
+            label: Affiliate banner
+            type: object
+            fields:
+              - name: image
+                label: Banner image
+                type: image
+                options:
+                  rename: safe
+              - name: alt
+                label: Banner description and link destination
+                type: string
+              - name: url
+                label: Affiliate banner link
+                type: string

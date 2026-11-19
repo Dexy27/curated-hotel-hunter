@@ -30,6 +30,11 @@
       "bookingUrl": "https://tidd.ly/48oyBk2",
       "affiliate": true,
       "bookingQr": "/deal-photos/joali-being-offer-qr.png",
+      "banner": {
+        "image": "/deal-photos/joali-being-awin-banner.png",
+        "alt": "Visit the JOALI BEING resort homepage. Aerial view of overwater villas and the lagoon.",
+        "url": "https://www.awin1.com/cread.php?s=4772432&v=125626&q=602739&r=3150874"
+      },
       "checkIn": "2027-06-12",
       "cancellationCutoff": "2027-05-13",
       "reviewStartOn": "2026-11-19",

@@ -191,3 +191,16 @@
   aspect-ratio: auto;
   object-fit: contain;
 }
+
+.deal-banner {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: .75rem 0 1rem;
+}
+
+.deal-banner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

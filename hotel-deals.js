@@ -28,6 +28,24 @@ function makeDealCard(deal, status, onFeature = false) {
     appendText(card, "h3", deal.title);
   }
 
+  if (!onFeature && deal.banner) {
+    const imageUrl = parseUrl(deal.banner.image, window.location.origin);
+    const targetUrl = typeof deal.banner.url === "string" ? parseUrl(deal.banner.url) : null;
+    if (imageUrl?.origin === window.location.origin && imageUrl.pathname.startsWith("/deal-photos/") &&
+        targetUrl?.protocol === "https:" && typeof deal.banner.alt === "string" && deal.banner.alt.trim()) {
+      const link = document.createElement("a");
+      link.className = "deal-banner";
+      link.href = targetUrl.href;
+      link.rel = "sponsored";
+      const image = document.createElement("img");
+      image.src = imageUrl.href;
+      image.alt = deal.banner.alt;
+      image.loading = "lazy";
+      link.append(image);
+      card.append(link);
+    }
+  }
+
   if (!onFeature && Array.isArray(deal.photos)) {
     const photos = document.createDocumentFragment();
     for (const photo of deal.photos) {
