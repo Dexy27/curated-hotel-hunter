@@ -1,6 +1,6 @@
 import { displayDate, loadDeals, offerStatus } from "./offer-status.mjs";
 
-const hotelFinds = document.querySelector("[data-hotel-deals]");
+const hotelFinds = document.querySelector("[data-finds-browser]");
 
 function appendText(parent, element, value, className = "") {
   if (typeof value !== "string" || !value.trim()) return;
@@ -19,11 +19,20 @@ function parseUrl(value, base) {
   }
 }
 
-function makeDealCard(deal, status, onFeature = false) {
+function dealId(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+const stayDates = new Intl.DateTimeFormat("en-GB", {
+  day: "numeric", month: "short", year: "numeric", timeZone: "UTC",
+});
+
+function makeDealCard(deal, status, onFeature = false, compact = false) {
   const card = document.createElement("article");
-  card.className = "card";
+  card.className = compact ? "card finds-card" : "card";
+  const details = compact ? document.createElement("details") : card;
   if (!onFeature) {
-    card.id = deal.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    card.id = dealId(deal.title);
     appendText(card, "div", deal.location, "tag");
     appendText(card, "h3", deal.title);
   }
@@ -75,23 +84,34 @@ function makeDealCard(deal, status, onFeature = false) {
       const gallery = document.createElement("details");
       appendText(gallery, "summary", "See more photos");
       gallery.append(photos);
-      card.append(gallery);
+      details.append(gallery);
     }
   }
 
   const discoveryPage = typeof deal.discoveryPage === "string" ? deal.discoveryPage.trim() : "";
   const hasDiscovery = /^[a-z0-9-]+\.html$/.test(discoveryPage);
-  if (hasDiscovery) appendText(card, "p", deal.description, "deal-description");
-  appendText(card, "div", deal.price, "price");
-  if (!hasDiscovery) appendText(card, "p", deal.description, "deal-description");
+  if (compact) {
+    const start = parseDate(deal.checkIn);
+    const end = parseDate(deal.checkOut);
+    if (start) appendText(card, "p", end && end > start ? stayDates.formatRange(start, end) : displayDate(deal.checkIn), "finds-dates");
+    if (!start && status.historical) appendText(card, "p", deal.description, "finds-dates");
+    appendText(card, "div", deal.price, "price");
+    const highlight = Array.isArray(deal.highlights) ? deal.highlights[0] : "";
+    appendText(card, "p", highlight || deal.recommendedFor, "finds-highlight");
+    if (start || !status.historical) appendText(details, "p", deal.description, "deal-description");
+  } else {
+    if (hasDiscovery) appendText(card, "p", deal.description, "deal-description");
+    appendText(card, "div", deal.price, "price");
+    if (!hasDiscovery) appendText(card, "p", deal.description, "deal-description");
+  }
   if (status.showCancellation) {
-    appendText(card, "p", `Free cancellation before ${displayDate(status.cancellationCutoff)}.`);
+    appendText(details, "p", `Free cancellation before ${displayDate(status.cancellationCutoff)}.`);
   }
   if (deal.noPrepayment === true) {
     const payment = document.createElement("p");
     appendText(payment, "strong", "No prepayment needed");
     payment.append(". Pay at the property.");
-    card.append(payment);
+    details.append(payment);
   }
   if (Array.isArray(deal.priceDetails) && deal.priceDetails.length) {
     const list = document.createElement("ul");
@@ -103,44 +123,44 @@ function makeDealCard(deal, status, onFeature = false) {
       }
       list.append(item);
     }
-    card.append(list);
+    details.append(list);
   }
-  appendText(card, "p", deal.priceNote, "small");
+  appendText(details, "p", deal.priceNote, "small");
   if (!status.historical && status.lastVerified) {
-    appendText(card, "p", `Last checked ${displayDate(status.lastVerified)}`, "small");
+    appendText(details, "p", `Last checked ${displayDate(status.lastVerified)}`, "small");
   }
 
   if (!onFeature && typeof deal.recommendedFor === "string" && deal.recommendedFor.trim()) {
-    appendText(card, "strong", "Recommended for:");
+    appendText(details, "strong", "Recommended for:");
     const recommendation = document.createElement("p");
     appendText(recommendation, "strong", deal.recommendedFor);
-    card.append(recommendation);
+    details.append(recommendation);
   }
 
   if (!onFeature && Array.isArray(deal.highlights) && deal.highlights.length) {
-    appendText(card, "strong", deal.highlightsLabel || "Highlights");
+    appendText(details, "strong", deal.highlightsLabel || "Highlights");
     const highlights = document.createElement("ul");
     for (const highlight of deal.highlights) {
       const item = document.createElement("li");
       appendText(item, "strong", highlight);
       highlights.append(item);
     }
-    card.append(highlights);
+    details.append(highlights);
   }
   if (!onFeature && typeof deal.stayNote === "string") {
     for (const paragraph of deal.stayNote.split(/\r?\n/)) {
-      appendText(card, "p", paragraph.trim());
+      appendText(details, "p", paragraph.trim());
     }
   }
   if (typeof deal.valueNote === "string" && deal.valueNote.trim()) {
-    appendText(card, "strong", "CHH verdict");
-    appendText(card, "p", deal.valueNote);
+    appendText(details, "strong", "CHH verdict");
+    appendText(details, "p", deal.valueNote);
   }
 
   if (hasDiscovery && !onFeature) {
     const link = document.createElement("a");
     link.href = discoveryPage;
-    link.textContent = "Read discovery →";
+    link.textContent = compact && hotelFindsOrder(deal) === 0 ? "Read about the stay" : "Read discovery →";
     card.append(link);
   }
 
@@ -151,9 +171,10 @@ function makeDealCard(deal, status, onFeature = false) {
     }
     const link = document.createElement("a");
     link.href = bookingUrl.href;
-    if (hasDiscovery && !onFeature) link.className = "deal-booking-link";
+    if (compact) link.className = "finds-offer-link";
+    else if (hasDiscovery && !onFeature) link.className = "deal-booking-link";
     if (!onFeature || deal.affiliate === true) link.rel = "sponsored";
-    link.textContent = deal.affiliate === true ? "View offer" : onFeature ? "Check availability →" : "View hotel →";
+    link.textContent = deal.affiliate === true || compact ? "View offer" : onFeature ? "Check availability →" : "View hotel →";
     card.append(link);
 
     if (typeof deal.bookingQr === "string") {
@@ -168,9 +189,17 @@ function makeDealCard(deal, status, onFeature = false) {
         image.height = 180;
         image.loading = "lazy";
         qr.append(image);
-        card.append(qr);
+        details.append(qr);
       }
     }
+  }
+
+  if (compact && details.firstChild) {
+    details.className = "finds-details";
+    const summary = document.createElement("summary");
+    summary.textContent = deal.price ? "Offer details" : "Stay details";
+    details.prepend(summary);
+    card.append(details);
   }
 
   return card;
@@ -179,8 +208,180 @@ function makeDealCard(deal, status, onFeature = false) {
 function hotelFindsOrder(deal) {
   const hasFirsthandPhotos = typeof deal.stayNote === "string" && deal.stayNote.trim() &&
     Array.isArray(deal.photos) && deal.photos.some(photo => typeof photo?.image === "string" && photo.image.trim());
-  if (hasFirsthandPhotos) return 0;
+  if (deal.firsthand === true || hasFirsthandPhotos) return 0;
   return deal.affiliate === true ? 1 : 2;
+}
+
+const monthLabels = new Intl.DateTimeFormat("en-GB", {
+  month: "long", year: "numeric", timeZone: "UTC",
+});
+const pageSize = 12;
+
+function parseDate(value) {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+  const date = new Date(value);
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value ? date : null;
+}
+
+function travelMonths(deal, status) {
+  const start = parseDate(deal.checkIn);
+  if (!start || status.historical) return [];
+  const end = parseDate(deal.checkOut);
+  const lastNight = end && end > start ? new Date(end.getTime() - 86400000) : start;
+  const date = new Date(start);
+  date.setUTCDate(1);
+  const months = [];
+  while (date <= lastNight) {
+    months.push(date.toISOString().slice(0, 7));
+    date.setUTCMonth(date.getUTCMonth() + 1);
+  }
+  return months;
+}
+
+function searchable(value) {
+  return value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+}
+
+function renderHotelFinds(deals, visibleDeals) {
+  const form = hotelFinds.querySelector("[data-finds-filters]");
+  const search = form.elements.namedItem("q");
+  const destination = form.elements.namedItem("destination");
+  const month = form.elements.namedItem("month");
+  const results = hotelFinds.querySelector("[data-finds-results]");
+  const heading = hotelFinds.querySelector("#finds-results-title");
+  const count = hotelFinds.querySelector("[data-finds-count]");
+  const browseAll = hotelFinds.querySelector("[data-browse-all]");
+  const pages = hotelFinds.querySelector("[data-finds-pages]");
+
+  const archives = deals.filter(deal => (
+    deal.firsthand === true && deal.discoveryPage &&
+    !visibleDeals.some(entry => entry.deal === deal)
+  )).map(deal => ({
+    deal: {
+      title: deal.title, destination: deal.destination, location: deal.destination,
+      firsthand: true, photos: deal.photos, highlights: deal.highlights,
+      highlightsLabel: deal.highlightsLabel, discoveryPage: deal.discoveryPage,
+    },
+    status: { historical: true },
+  }));
+  const entries = [...visibleDeals, ...archives]
+    .sort((a, b) => hotelFindsOrder(a.deal) - hotelFindsOrder(b.deal) ||
+      Number(b.deal.firsthand === true) - Number(a.deal.firsthand === true))
+    .map(entry => ({
+      ...entry,
+      id: dealId(entry.deal.title),
+      months: travelMonths(entry.deal, entry.status),
+      searchText: searchable([entry.deal.title, entry.deal.destination, entry.deal.location].join(" ")),
+    }));
+
+  const destinations = [...new Set(entries.map(entry => entry.deal.destination).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b, "en"));
+  const months = [...new Set(entries.flatMap(entry => entry.months))].sort();
+  for (const name of destinations) destination.add(new Option(name, name));
+  for (const value of months) month.add(new Option(monthLabels.format(new Date(value + "-01")), value));
+  const examples = entries.filter(entry => !entry.status.historical && entry.deal.price).slice(0, 2);
+
+  const url = new URL(window.location.href);
+  const initialTarget = entries.find(entry => entry.id === url.hash.slice(1));
+  search.value = url.searchParams.get("q") || "";
+  destination.value = destinations.includes(url.searchParams.get("destination")) ? url.searchParams.get("destination") : "";
+  month.value = months.includes(url.searchParams.get("month")) ? url.searchParams.get("month") : "";
+  let all = url.searchParams.get("all") === "1" || Boolean(initialTarget);
+  let page = Number.parseInt(url.searchParams.get("page"), 10) || 1;
+  const hasFilters = () => Boolean(search.value.trim() || destination.value || month.value);
+
+  function syncUrl() {
+    const current = new URL(window.location.href);
+    current.hash = "";
+    const params = {
+      q: search.value.trim(), destination: destination.value, month: month.value,
+      all: all ? "1" : "", page: page > 1 ? String(page) : "",
+    };
+    for (const [key, value] of Object.entries(params)) {
+      if (value) current.searchParams.set(key, value);
+      else current.searchParams.delete(key);
+    }
+    window.history.replaceState(null, "", current);
+  }
+
+  function changePage(nextPage) {
+    page = nextPage;
+    render();
+    syncUrl();
+    heading.focus();
+  }
+
+  function render(initial = false) {
+    const keywords = searchable(search.value.trim()).split(/\s+/).filter(Boolean);
+    const filtered = hasFilters();
+    const featured = !filtered && !all && examples.length > 0 && entries.length > examples.length;
+    const matching = featured ? examples : entries.filter(entry => (
+      (!destination.value || entry.deal.destination === destination.value) &&
+      (!month.value || entry.months.includes(month.value)) &&
+      keywords.every(word => entry.searchText.includes(word))
+    ));
+    const targetIndex = initial && initialTarget ? matching.indexOf(initialTarget) : -1;
+    if (targetIndex >= 0) page = Math.floor(targetIndex / pageSize) + 1;
+    const pageCount = Math.max(1, Math.ceil(matching.length / pageSize));
+    page = Math.min(pageCount, Math.max(1, page));
+    const first = (page - 1) * pageSize;
+    const visible = matching.slice(first, first + pageSize);
+
+    heading.textContent = featured ? "Featured offers" : filtered ? "Search results" : "All hotel finds";
+    browseAll.hidden = !featured;
+    if (featured) count.textContent = `Showing ${examples.length} of ${entries.length} hotel finds.`;
+    else if (!matching.length) count.textContent = "No hotel finds match. Try a different destination or month, or clear the filters.";
+    else if (pageCount > 1) count.textContent = `Showing ${first + 1}–${first + visible.length} of ${matching.length} hotel finds.`;
+    else count.textContent = `${matching.length} hotel ${matching.length === 1 ? "find" : "finds"}.`;
+    results.replaceChildren(...visible.map(({ deal, status }) => makeDealCard(deal, status, false, true)));
+
+    pages.replaceChildren();
+    pages.hidden = pageCount <= 1;
+    if (pageCount > 1) {
+      function pageButton(label, target, disabled = false) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "finds-control";
+        button.textContent = label;
+        button.disabled = disabled;
+        if (String(target) === label) button.setAttribute("aria-label", `Page ${label}`);
+        if (String(page) === label) button.setAttribute("aria-current", "page");
+        button.addEventListener("click", () => changePage(target));
+        pages.append(button);
+      }
+      pageButton("Previous", page - 1, page === 1);
+      for (let number = 1; number <= pageCount; number++) pageButton(String(number), number, number === page);
+      pageButton("Next", page + 1, page === pageCount);
+    }
+    if (targetIndex >= 0) document.getElementById(initialTarget.id)?.scrollIntoView();
+  }
+
+  function applyFilters() {
+    page = 1;
+    render();
+    syncUrl();
+  }
+
+  search.addEventListener("input", applyFilters);
+  destination.addEventListener("change", applyFilters);
+  month.addEventListener("change", applyFilters);
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    applyFilters();
+  });
+  form.addEventListener("reset", event => {
+    event.preventDefault();
+    search.value = destination.value = month.value = "";
+    all = false;
+    applyFilters();
+  });
+  browseAll.addEventListener("click", () => {
+    all = true;
+    changePage(1);
+  });
+
+  heading.tabIndex = -1;
+  render(true);
 }
 
 async function renderOffers() {
@@ -195,16 +396,7 @@ async function renderOffers() {
   }
 
   const featureSections = [...document.querySelectorAll("[data-feature-offer]")];
-  if (hotelFinds) {
-    const featurePages = new Set(featureSections.map(section => section.dataset.featureOffer));
-    const cards = visibleDeals
-      .filter(({ deal, status }) => status.historical || !featurePages.has(deal.discoveryPage))
-      .sort((a, b) => hotelFindsOrder(a.deal) - hotelFindsOrder(b.deal))
-      .map(({ deal, status }) => makeDealCard(deal, status));
-    hotelFinds.replaceChildren(...cards);
-    const target = document.getElementById(window.location.hash.slice(1));
-    target?.scrollIntoView();
-  }
+  if (hotelFinds) renderHotelFinds(deals, visibleDeals);
 
   for (const section of featureSections) {
     const offer = visibleDeals.find(({ deal, status }) => (
@@ -216,4 +408,8 @@ async function renderOffers() {
   }
 }
 
-renderOffers().catch(error => console.warn("Unable to load hotel deals.", error));
+renderOffers().catch(error => {
+  console.warn("Unable to load hotel deals.", error);
+  const status = hotelFinds?.querySelector("[data-finds-count]");
+  if (status) status.textContent = "Hotel finds could not be loaded. Please refresh to try again.";
+});

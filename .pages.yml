@@ -25,6 +25,14 @@ content:
           - name: location
             label: Destination or card label
             type: string
+          - name: destination
+            label: Country or destination
+            description: "Use a consistent name such as Maldives or Thailand so the offer appears in destination filters."
+            type: string
+          - name: firsthand
+            label: Photos from my stay
+            description: "Enable for hotels you visited and add your photos below."
+            type: boolean
           - name: price
             label: Price
             description: "Include the currency and what the price covers, e.g. €1,250 for 7 nights."
@@ -59,6 +67,12 @@ content:
             description: "The active offer disappears when this date begins in Madrid. Fill this in for live offers."
             type: date
             default: ""
+            options:
+              format: yyyy-MM-dd
+          - name: checkOut
+            label: Check-out date
+            description: "Used with the check-in date to show every travel month the stay covers."
+            type: date
             options:
               format: yyyy-MM-dd
           - name: bookingCutoff

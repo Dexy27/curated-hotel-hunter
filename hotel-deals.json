@@ -38,7 +38,9 @@
       "checkIn": "2027-06-12",
       "cancellationCutoff": "2027-05-13",
       "reviewStartOn": "2026-11-19",
-      "lastVerified": "2026-11-19"
+      "lastVerified": "2026-11-19",
+      "destination": "Maldives",
+      "checkOut": "2027-06-19"
     },
     {
       "title": "Kantary Bay Hotel Phuket",
@@ -70,7 +72,9 @@
       "checkIn": "2027-03-15",
       "reviewStartOn": "2026-11-18",
       "lastVerified": "2026-11-18",
-      "stayNote": "Kantary Bay is a quiet bayfront retreat.\nVillage restaurants and an evening market are a short walk away.\nMy highlight was taking the free shuttle to Cape Panwa Hotel, then riding the funicular tram down to its private beach."
+      "stayNote": "Kantary Bay is a quiet bayfront retreat.\nVillage restaurants and an evening market are a short walk away.\nMy highlight was taking the free shuttle to Cape Panwa Hotel, then riding the funicular tram down to its private beach.",
+      "destination": "Thailand",
+      "checkOut": "2027-03-29"
     },
     {
       "title": "SAii Lagoon Maldives",
@@ -79,7 +83,8 @@
       "description": "27 Dec 2026 – 6 Jan 2027 · 10 nights · 2 adults · half board",
       "priceNote": "Historical booked price, excluding mandatory speedboat transfers. Not a live offer.",
       "discoveryPage": "maldives.html",
-      "historical": true
+      "historical": true,
+      "destination": "Maldives"
     },
     {
       "title": "Punta Cana Princess",
@@ -105,7 +110,9 @@
       "checkIn": "2027-02-11",
       "reviewStartOn": "2026-11-16",
       "lastVerified": "2026-11-16",
-      "cancellationCutoff": "2027-02-10"
+      "cancellationCutoff": "2027-02-10",
+      "destination": "Dominican Republic",
+      "checkOut": "2027-02-18"
     },
     {
       "title": "Curaçao Avila Beach Hotel",
@@ -117,7 +124,9 @@
       "reviewStartOn": "2026-11-09",
       "lastVerified": "2026-11-16",
       "cancellationCutoff": "2027-07-08",
-      "bookingUrl": "https://www.booking.com/hotel/cw/avila.html?checkin=2027-08-07&checkout=2027-08-17&group_adults=2&group_children=0&no_rooms=1"
+      "bookingUrl": "https://www.booking.com/hotel/cw/avila.html?checkin=2027-08-07&checkout=2027-08-17&group_adults=2&group_children=0&no_rooms=1",
+      "destination": "Curaçao",
+      "checkOut": "2027-08-17"
     },
     {
       "title": "Riu Palace Mauritius",
@@ -129,7 +138,9 @@
       "checkIn": "2027-04-25",
       "reviewStartOn": "2026-11-09",
       "lastVerified": "2026-11-16",
-      "cancellationCutoff": "2027-04-23"
+      "cancellationCutoff": "2027-04-23",
+      "destination": "Mauritius",
+      "checkOut": "2027-05-05"
     },
     {
       "title": "KC Grande Resort Koh Chang",
@@ -140,7 +151,9 @@
       "bookingUrl": "https://www.booking.com/hotel/th/kc-grande-resort-spa.en-gb.html?checkin=2027-03-24&checkout=2027-03-31&group_adults=2&no_rooms=1&group_children=0&selected_currency=EUR",
       "checkIn": "2027-03-24",
       "reviewStartOn": "2026-11-11",
-      "lastVerified": "2026-11-18"
+      "lastVerified": "2026-11-18",
+      "destination": "Thailand",
+      "checkOut": "2027-03-31"
     },
     {
       "title": "Vilamendhoo Island Resort & Spa",
@@ -153,7 +166,20 @@
       "reviewStartOn": "2026-11-11",
       "lastVerified": "2026-11-18",
       "cancellationCutoff": "2027-05-12",
-      "bookingUrl": "https://www.booking.com/hotel/mv/vilamendhoo-island-resort-amp-spa.html?checkin=2027-05-15&checkout=2027-05-22&group_adults=2&group_children=0&no_rooms=1"
+      "bookingUrl": "https://www.booking.com/hotel/mv/vilamendhoo-island-resort-amp-spa.html?checkin=2027-05-15&checkout=2027-05-22&group_adults=2&group_children=0&no_rooms=1",
+      "destination": "Maldives",
+      "checkOut": "2027-05-22",
+      "firsthand": true,
+      "photos": [
+        {
+          "image": "/deal-photos/vilamendhoo-boardwalk.webp",
+          "alt": "Boardwalk to the overwater villas at Vilamendhoo"
+        }
+      ],
+      "highlights": [
+        "House reef snorkeling"
+      ],
+      "highlightsLabel": "Recommended for:"
     },
     {
       "title": "Riu Jambo Zanzibar",
@@ -167,7 +193,21 @@
       "reviewStartOn": "2026-11-11",
       "lastVerified": "2026-11-18",
       "cancellationCutoff": "2027-08-13",
-      "bookingUrl": "https://www.booking.com/hotel/tz/riu-jambo.en-gb.html?checkin=2027-08-14&checkout=2027-08-21&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR"
+      "bookingUrl": "https://www.booking.com/hotel/tz/riu-jambo.en-gb.html?checkin=2027-08-14&checkout=2027-08-21&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
+      "destination": "Tanzania",
+      "checkOut": "2027-08-21",
+      "firsthand": true,
+      "photos": [
+        {
+          "image": "/deal-photos/riu-jambo-shoreline.webp",
+          "alt": "Small waves washing onto a white-sand beach in Zanzibar"
+        }
+      ],
+      "highlights": [
+        "All-day sea swimming",
+        "Exceptional food in the main restaurant"
+      ],
+      "highlightsLabel": "Highlights:"
     },
     {
       "title": "Ao Prao Resort Koh Samet",
@@ -178,7 +218,22 @@
       "discoveryPage": "ao-prao-koh-samet.html",
       "checkIn": "2027-05-06",
       "reviewStartOn": "2026-11-16",
-      "lastVerified": "2026-11-15"
+      "lastVerified": "2026-11-15",
+      "destination": "Thailand",
+      "checkOut": "2027-05-13",
+      "firsthand": true,
+      "photos": [
+        {
+          "image": "/deal-photos/ao-prao-bay.webp",
+          "alt": "Ao Prao’s turquoise bay above palms and resort rooftops"
+        }
+      ],
+      "highlights": [
+        "A peaceful, romantic stay",
+        "Amazing sunsets",
+        "An easy island escape from Bangkok"
+      ],
+      "highlightsLabel": "Highlights:"
     }
   ]
 }
