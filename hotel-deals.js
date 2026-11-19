@@ -116,12 +116,31 @@ function makeDealCard(deal, status, onFeature = false) {
 
   const bookingUrl = typeof deal.bookingUrl === "string" ? parseUrl(deal.bookingUrl) : null;
   if (bookingUrl?.protocol === "https:") {
+    if (deal.affiliate === true) {
+      appendText(card, "p", "We may earn a commission if you book through this offer at no extra cost to you.", "small");
+    }
     const link = document.createElement("a");
     link.href = bookingUrl.href;
     if (hasDiscovery && !onFeature) link.className = "deal-booking-link";
-    if (!onFeature) link.rel = "sponsored";
-    link.textContent = onFeature ? "Check availability →" : "View hotel →";
+    if (!onFeature || deal.affiliate === true) link.rel = "sponsored";
+    link.textContent = deal.affiliate === true ? "View offer" : onFeature ? "Check availability →" : "View hotel →";
     card.append(link);
+
+    if (typeof deal.bookingQr === "string") {
+      const qrUrl = parseUrl(deal.bookingQr, window.location.origin);
+      if (qrUrl?.origin === window.location.origin && qrUrl.pathname.startsWith("/deal-photos/")) {
+        const qr = document.createElement("details");
+        appendText(qr, "summary", "Show booking QR code");
+        const image = document.createElement("img");
+        image.src = qrUrl.href;
+        image.alt = `Scan to open the ${deal.title} offer on another device`;
+        image.width = 180;
+        image.height = 180;
+        image.loading = "lazy";
+        qr.append(image);
+        card.append(qr);
+      }
+    }
   }
 
   return card;

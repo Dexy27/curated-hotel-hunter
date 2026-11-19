@@ -1,6 +1,24 @@
 {
   "deals": [
     {
+      "title": "JOALI BEING",
+      "location": "Raa Atoll, Maldives",
+      "price": "US$14,477.17 total for 2 adults · 7 nights",
+      "description": "12–19 June 2027 · Ocean Pool Villa · Advance Purchase with Half Board.",
+      "priceNote": "JOALI’s booking engine showed this accommodation total, including taxes and fees, on 19 November 2026. Confirm the seaplane transfer cost separately. A 25% deposit is required and the balance is due 30 days before arrival. Price, availability and terms may change.",
+      "highlights": [
+        "Overwater villa with a private pool",
+        "Daily breakfast and dinner included"
+      ],
+      "bookingUrl": "https://tidd.ly/48oyBk2",
+      "affiliate": true,
+      "bookingQr": "/deal-photos/joali-being-offer-qr.png",
+      "checkIn": "2027-06-12",
+      "cancellationCutoff": "2027-05-13",
+      "reviewStartOn": "2026-11-19",
+      "lastVerified": "2026-11-19"
+    },
+    {
       "title": "Kantary Bay Hotel Phuket",
       "photos": [
         {

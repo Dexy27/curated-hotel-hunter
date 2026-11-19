@@ -115,3 +115,11 @@ content:
             label: Hotel or booking link
             description: "Optional. Paste the full link starting with https://."
             type: string
+          - name: affiliate
+            label: Affiliate booking link
+            type: boolean
+          - name: bookingQr
+            label: Booking QR image
+            type: image
+            options:
+              rename: safe
