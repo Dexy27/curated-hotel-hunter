@@ -158,6 +158,13 @@ function makeDealCard(deal, status, onFeature = false) {
   return card;
 }
 
+function hotelFindsOrder(deal) {
+  const hasFirsthandPhotos = typeof deal.stayNote === "string" && deal.stayNote.trim() &&
+    Array.isArray(deal.photos) && deal.photos.some(photo => typeof photo?.image === "string" && photo.image.trim());
+  if (hasFirsthandPhotos) return 0;
+  return deal.affiliate === true ? 1 : 2;
+}
+
 async function renderOffers() {
   const deals = await loadDeals();
   const visibleDeals = deals.map(deal => ({ deal, status: offerStatus(deal) }))
@@ -174,6 +181,7 @@ async function renderOffers() {
     const featurePages = new Set(featureSections.map(section => section.dataset.featureOffer));
     const cards = visibleDeals
       .filter(({ deal, status }) => status.historical || !featurePages.has(deal.discoveryPage))
+      .sort((a, b) => hotelFindsOrder(a.deal) - hotelFindsOrder(b.deal))
       .map(({ deal, status }) => makeDealCard(deal, status));
     hotelFinds.replaceChildren(...cards);
     const target = document.getElementById(window.location.hash.slice(1));
