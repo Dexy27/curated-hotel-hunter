@@ -75,6 +75,18 @@ function makeDealCard(deal, status, onFeature = false) {
     payment.append(". Pay at the property.");
     card.append(payment);
   }
+  if (Array.isArray(deal.priceDetails) && deal.priceDetails.length) {
+    const list = document.createElement("ul");
+    for (const detail of deal.priceDetails) {
+      const item = document.createElement("li");
+      appendText(item, "strong", detail.lead);
+      if (typeof detail.detail === "string" && detail.detail.trim()) {
+        item.append(` ${detail.detail.trim()}`);
+      }
+      list.append(item);
+    }
+    card.append(list);
+  }
   appendText(card, "p", deal.priceNote, "small");
   if (!status.historical && status.lastVerified) {
     appendText(card, "p", `Last checked ${displayDate(status.lastVerified)}`, "small");

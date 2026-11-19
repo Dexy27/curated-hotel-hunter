@@ -39,6 +39,18 @@ content:
             label: No prepayment needed
             description: "Enable when guests can pay at the property."
             type: boolean
+          - name: priceDetails
+            label: Price and booking details
+            type: object
+            list: true
+            fields:
+              - name: lead
+                label: Bold text
+                type: string
+                required: true
+              - name: detail
+                label: Supporting text
+                type: text
           - name: priceNote
             label: Price or availability note
             type: text
