@@ -174,8 +174,10 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
     if (compact) link.className = "finds-offer-link";
     else if (hasDiscovery && !onFeature) link.className = "deal-booking-link";
     if (!onFeature || deal.affiliate === true) link.rel = "sponsored";
-    link.textContent = deal.affiliate === true || compact ? "View offer" : onFeature ? "Check availability →" : "View hotel →";
+    const defaultBookingLabel = deal.affiliate === true || compact ? "View offer" : onFeature ? "Check availability →" : "View hotel →";
+    link.textContent = deal.bookingLabel || defaultBookingLabel;
     card.append(link);
+    appendText(card, "p", deal.bookingNote, "small");
 
     if (typeof deal.bookingQr === "string") {
       const qrUrl = parseUrl(deal.bookingQr, window.location.origin);

@@ -1,6 +1,38 @@
 {
   "deals": [
     {
+      "title": "Iberostar Selection Zanzibar",
+      "location": "Muyuni Beach, Zanzibar, Tanzania",
+      "price": "€2,780 total for 2 adults · 7 nights",
+      "description": "11–18 February 2027 · Side Sea-View Junior Suite · All-inclusive · Flexible rate booked directly with Iberostar.",
+      "priceDetails": [
+        {
+          "lead": "€575 less than Booking.com’s displayed public flexible rate.",
+          "detail": "Booking.com showed €3,355 for the same room, dates and occupancy. This compares the displayed prices before adjusting for any local charges."
+        },
+        {
+          "lead": "Zanzibar infrastructure tax payable separately at the hotel.",
+          "detail": "Equivalent to US$5 per person per night (US$70 equivalent for two adults for seven nights), payable in Tanzanian shillings."
+        }
+      ],
+      "priceNote": "Prices checked on 20 November 2026. Rates, availability and terms may change. Submit flight details to Iberostar at least seven days before arrival to arrange the transfer.",
+      "highlights": [
+        "Free private round-trip Zanzibar airport transfer when booking direct",
+        "All-inclusive stay on Muyuni Beach"
+      ],
+      "bookingUrl": "https://www.jdoqocy.com/click-101924313-15539636?url=https%3A%2F%2Fwww.iberostar.com%2Fes%2Fhoteles%2Fzanzibar%2Fiberostar-selection-zanzibar%2F",
+      "bookingLabel": "Check availability",
+      "bookingNote": "Select 11–18 February 2027 for 2 adults on Iberostar’s website.",
+      "reviewStartOn": "2026-11-20",
+      "affiliate": true,
+      "noPrepayment": true,
+      "checkIn": "2027-02-11",
+      "checkOut": "2027-02-18",
+      "cancellationCutoff": "2027-02-08",
+      "lastVerified": "2026-11-20",
+      "destination": "Tanzania"
+    },
+    {
       "title": "JOALI BEING",
       "location": "Raa Atoll, Maldives",
       "price": "Approx. €13,200 total for 2 adults · 7 nights",
