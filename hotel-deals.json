@@ -1,6 +1,42 @@
 {
   "deals": [
     {
+      "title": "Riu Dubai Beach Resort",
+      "location": "May Day holiday in Dubai",
+      "destination": "Dubai",
+      "price": "€2,235 total for 2 adults · 7 nights",
+      "description": "30 April–7 May 2027 · Double Room with Partial Sea View · All-inclusive.",
+      "checkIn": "2027-04-30",
+      "checkOut": "2027-05-07",
+      "cancellationCutoff": "2027-04-28",
+      "noPrepayment": true,
+      "priceDetails": [
+        {
+          "lead": "Save €946 (about 30%).",
+          "detail": "Booking.com displayed €3,181 as the reference price."
+        }
+      ],
+      "priceNote": "Unbeatable price for an all-inclusive beachfront resort with a private beach in Dubai. The €2,235 rate includes taxes and fees. Price, availability and terms may change.",
+      "bookingUrl": "https://www.booking.com/hotel/ae/riu-dubai-all-inclusive.html?checkin=2027-04-30&checkout=2027-05-07&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
+      "bookingLabel": "Check availability on Booking.com",
+      "discoveryPage": "riu-dubai.html",
+      "firsthand": true,
+      "photos": [
+        {
+          "image": "/deal-photos/riu-dubai-beach.webp",
+          "alt": "White umbrellas and sun loungers on the sandy beach at Riu Dubai"
+        }
+      ],
+      "highlights": [
+        "Family-friendly resort",
+        "Private beach",
+        "Quiet holiday in a secluded setting, with little within walking distance."
+      ],
+      "highlightsLabel": "Highlights:",
+      "reviewStartOn": "2026-11-21",
+      "lastVerified": "2026-11-20"
+    },
+    {
       "title": "Iberostar Selection Zanzibar",
       "location": "Muyuni Beach, Zanzibar, Tanzania",
       "price": "€2,780 total for 2 adults · 7 nights",
