@@ -218,6 +218,7 @@ const monthLabels = new Intl.DateTimeFormat("en-GB", {
   month: "long", year: "numeric", timeZone: "UTC",
 });
 const pageSize = 12;
+const featuredOfferIds = ["iberostar-selection-zanzibar", "joali-being"];
 
 function parseDate(value) {
   if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
@@ -281,7 +282,9 @@ function renderHotelFinds(deals, visibleDeals) {
   const months = [...new Set(entries.flatMap(entry => entry.months))].sort();
   for (const name of destinations) destination.add(new Option(name, name));
   for (const value of months) month.add(new Option(monthLabels.format(new Date(value + "-01")), value));
-  const examples = entries.filter(entry => !entry.status.historical && entry.deal.price).slice(0, 2);
+  const featuredOffers = featuredOfferIds.map(id => entries.find(entry => (
+    entry.id === id && !entry.status.historical && entry.deal.price
+  ))).filter(Boolean);
 
   const url = new URL(window.location.href);
   const initialTarget = entries.find(entry => entry.id === url.hash.slice(1));
@@ -316,8 +319,8 @@ function renderHotelFinds(deals, visibleDeals) {
   function render(initial = false) {
     const keywords = searchable(search.value.trim()).split(/\s+/).filter(Boolean);
     const filtered = hasFilters();
-    const featured = !filtered && !all && examples.length > 0 && entries.length > examples.length;
-    const matching = featured ? examples : entries.filter(entry => (
+    const featured = !filtered && !all && featuredOffers.length > 0 && entries.length > featuredOffers.length;
+    const matching = featured ? featuredOffers : entries.filter(entry => (
       (!destination.value || entry.deal.destination === destination.value) &&
       (!month.value || entry.months.includes(month.value)) &&
       keywords.every(word => entry.searchText.includes(word))
@@ -331,7 +334,7 @@ function renderHotelFinds(deals, visibleDeals) {
 
     heading.textContent = featured ? "Featured offers" : filtered ? "Search results" : "All hotel finds";
     browseAll.hidden = !featured;
-    if (featured) count.textContent = `Showing ${examples.length} of ${entries.length} hotel finds.`;
+    if (featured) count.textContent = `Showing ${featuredOffers.length} of ${entries.length} hotel finds.`;
     else if (!matching.length) count.textContent = "No hotel finds match. Try a different destination or month, or clear the filters.";
     else if (pageCount > 1) count.textContent = `Showing ${first + 1}–${first + visible.length} of ${matching.length} hotel finds.`;
     else count.textContent = `${matching.length} hotel ${matching.length === 1 ? "find" : "finds"}.`;
