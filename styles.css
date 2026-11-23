@@ -277,3 +277,42 @@
   .finds-filters button { justify-self: start; }
   .finds-results-header h2 { font-size: 28px; }
 }
+
+.cookie-settings {
+  margin: 0 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.analytics-consent {
+  position: fixed;
+  z-index: 10;
+  inset: auto 16px 16px;
+  max-width: 540px;
+  margin-inline: auto;
+  padding: 16px 20px;
+  border: 1px solid #b98b79;
+  border-radius: 6px;
+  background: #faf7f2;
+  box-shadow: 0 6px 24px #493f3833;
+  font-size: 14px;
+}
+.analytics-consent h2 { margin: 0 0 8px; font-size: 22px; }
+.analytics-consent p { margin: 0 0 12px; }
+.analytics-consent-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.analytics-consent-actions button {
+  flex: 1 1 135px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid #785546;
+  border-radius: 4px;
+  background: #fff;
+  color: #493f38;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}

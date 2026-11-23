@@ -1,4 +1,3 @@
-import "./hotel-analytics.js";
 import { displayDate, loadDeals, offerStatus } from "./offer-status.mjs";
 
 const hotelFinds = document.querySelector("[data-finds-browser]");
@@ -31,7 +30,6 @@ const stayDates = new Intl.DateTimeFormat("en-GB", {
 function makeDealCard(deal, status, onFeature = false, compact = false) {
   const card = document.createElement("article");
   card.className = compact ? "card finds-card" : "card";
-  card.dataset.hotelTitle = deal.title;
   const details = compact ? document.createElement("details") : card;
   if (!onFeature) {
     card.id = dealId(deal.title);
@@ -46,6 +44,7 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
         targetUrl?.protocol === "https:" && typeof deal.banner.alt === "string" && deal.banner.alt.trim()) {
       const link = document.createElement("a");
       link.className = "deal-banner";
+      link.dataset.analyticsHotel = deal.title;
       link.href = targetUrl.href;
       link.rel = "sponsored";
       const image = document.createElement("img");
@@ -162,6 +161,7 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
   if (hasDiscovery && !onFeature) {
     const link = document.createElement("a");
     link.href = discoveryPage;
+    link.dataset.analyticsHotel = deal.title;
     link.textContent = compact && hotelFindsOrder(deal) === 0 ? "Read about the stay" : "Read discovery →";
     card.append(link);
   }
@@ -173,6 +173,7 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
     }
     const link = document.createElement("a");
     link.href = bookingUrl.href;
+    link.dataset.analyticsHotel = deal.title;
     if (compact) link.className = "finds-offer-link";
     else if (hasDiscovery && !onFeature) link.className = "deal-booking-link";
     if (!onFeature || deal.affiliate === true) link.rel = "sponsored";
@@ -202,6 +203,7 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
     details.className = "finds-details";
     const summary = document.createElement("summary");
     summary.textContent = deal.price ? "Offer details" : "Stay details";
+    summary.dataset.analyticsHotel = deal.title;
     details.prepend(summary);
     card.append(details);
   }
