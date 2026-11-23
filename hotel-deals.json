@@ -299,13 +299,13 @@
     {
       "title": "Ao Prao Resort Koh Samet",
       "location": "May 2027 · Koh Samet, Thailand",
-      "price": "€1,136 total for 2 adults · 7 nights",
+      "price": "€1,167 total for 2 adults · 7 nights",
       "description": "6–13 May 2027 · Deluxe Hillside Room · Breakfast included · Non-refundable · Pay online.",
-      "priceNote": "Observed Booking.com price including taxes and fees, with €83 off displayed. Hillside location may not suit families with young children or guests with limited mobility. Price and availability may change. Resort transfer is not confirmed included.",
+      "priceNote": "The €1,167 Booking.com Saver rate includes taxes and fees. The hillside location may not suit families with young children or guests with limited mobility. Price and availability may change. Confirm resort transfer costs before booking.",
       "discoveryPage": "ao-prao-koh-samet.html",
       "checkIn": "2027-05-06",
       "reviewStartOn": "2026-11-16",
-      "lastVerified": "2026-11-15",
+      "lastVerified": "2026-11-23",
       "destination": "Thailand",
       "checkOut": "2027-05-13",
       "firsthand": true,
@@ -320,7 +320,13 @@
         "Amazing sunsets",
         "An easy island escape from Bangkok"
       ],
-      "highlightsLabel": "Highlights:"
+      "highlightsLabel": "Highlights:",
+      "priceDetails": [
+        {
+          "lead": "Save €85 (about 7%).",
+          "detail": "Booking.com displayed €1,252 as the reference price."
+        }
+      ]
     }
   ]
 }
