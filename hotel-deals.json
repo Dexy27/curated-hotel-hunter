@@ -211,16 +211,23 @@
     {
       "title": "Riu Palace Mauritius",
       "location": "May Day holiday · Mauritius",
-      "price": "€3,632 total for 2 adults · 10 nights",
+      "price": "€3,899 total for 2 adults · 10 nights",
       "description": "25 April – 5 May 2027 · Junior Suite · Adults-only, all-inclusive beachfront resort in Le Morne. Late April and May are a good shoulder-season window for fewer crowds and better hotel rates.",
-      "priceNote": "Booking.com showed €3,632 total including taxes and fees, down from its displayed reference price of €5,544 (€1,912 less). No payment due until 21 April 2027. Price, availability and terms may change.",
+      "priceNote": "Booking.com Black Friday Deal. The €3,899 rate includes taxes and fees. Price, availability and terms may change.",
       "bookingUrl": "https://www.booking.com/hotel/mu/riu-palace-mauritius-all-inclusive-adults-only.html?checkin=2027-04-25&checkout=2027-05-05&group_adults=2&group_children=0&no_rooms=1",
       "checkIn": "2027-04-25",
       "reviewStartOn": "2026-11-09",
-      "lastVerified": "2026-11-16",
+      "lastVerified": "2026-11-23",
       "cancellationCutoff": "2027-04-23",
       "destination": "Mauritius",
-      "checkOut": "2027-05-05"
+      "checkOut": "2027-05-05",
+      "noPrepayment": true,
+      "priceDetails": [
+        {
+          "lead": "Save €1,645 (about 30%).",
+          "detail": "Booking.com displayed €5,544 as the reference price."
+        }
+      ]
     },
     {
       "title": "KC Grande Resort Koh Chang",
