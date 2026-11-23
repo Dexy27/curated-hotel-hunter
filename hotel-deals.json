@@ -162,9 +162,15 @@
     {
       "title": "Punta Cana Princess",
       "location": "Valentine’s week · Bávaro, Dominican Republic",
-      "price": "€2,183 total for 2 adults · 7 nights",
+      "price": "€2,477 total for 2 adults · 7 nights",
       "description": "11–18 February 2027 · Deluxe Suite · Adults-only, all-inclusive beachfront resort.",
-      "priceNote": "Public Booking.com rate including taxes and fees. Booking.com displayed a reference price of €3,082 (€899 less, about 29%). No payment due until 8 February 2027. Price, availability and terms may change.",
+      "priceDetails": [
+        {
+          "lead": "Save €618 (about 20%).",
+          "detail": "Booking.com displayed €3,095 as the reference price."
+        }
+      ],
+      "priceNote": "Public Booking.com rate including taxes and fees. No payment due until 8 February 2027. Price, availability and terms may change.",
       "bookingUrl": "https://www.booking.com/hotel/do/punta-cana-princess.html?checkin=2027-02-11&checkout=2027-02-18&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
       "discoveryPage": "punta-cana-princess.html",
       "photos": [
@@ -179,10 +185,10 @@
         "Excellent rum cocktails"
       ],
       "stayNote": "We never queued for a meal during our stay. The food was just okay.",
-      "valueNote": "At €2,183 for two, I think it’s good value for peak season. If the price goes higher, I’d look elsewhere.",
+      "valueNote": "At this price, I’d compare other all-inclusive resorts before booking.",
       "checkIn": "2027-02-11",
       "reviewStartOn": "2026-11-16",
-      "lastVerified": "2026-11-16",
+      "lastVerified": "2026-11-23",
       "cancellationCutoff": "2027-02-10",
       "destination": "Dominican Republic",
       "checkOut": "2027-02-18"
