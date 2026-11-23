@@ -31,6 +31,7 @@ const stayDates = new Intl.DateTimeFormat("en-GB", {
 function makeDealCard(deal, status, onFeature = false, compact = false) {
   const card = document.createElement("article");
   card.className = compact ? "card finds-card" : "card";
+  card.dataset.hotelTitle = deal.title;
   const details = compact ? document.createElement("details") : card;
   if (!onFeature) {
     card.id = dealId(deal.title);
