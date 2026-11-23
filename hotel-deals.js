@@ -1,3 +1,4 @@
+import "./hotel-analytics.js";
 import { displayDate, loadDeals, offerStatus } from "./offer-status.mjs";
 
 const hotelFinds = document.querySelector("[data-finds-browser]");
