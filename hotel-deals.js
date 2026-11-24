@@ -34,6 +34,7 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
   if (!onFeature) {
     card.id = dealId(deal.title);
     appendText(card, "div", deal.location, "tag");
+    if (/^(Vilamendhoo\b|Ao Prao Resort\b|Riu Jambo\b)/i.test(deal.title)) appendText(card, "span", "✓ Personally visited", "visited-badge");
     appendText(card, "h3", deal.title);
   }
 
