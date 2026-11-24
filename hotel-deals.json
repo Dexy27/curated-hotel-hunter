@@ -62,7 +62,7 @@
         "alt": "Iberostar Hotels & Resorts beach banner. Check availability at Iberostar Selection Zanzibar.",
         "url": "https://www.jdoqocy.com/click-101924313-15539636?url=https%3A%2F%2Fwww.iberostar.com%2Fes%2Fhoteles%2Fzanzibar%2Fiberostar-selection-zanzibar%2F"
       },
-      "bookingLabel": "Check availability",
+      "bookingLabel": "Check availability with Iberostar",
       "bookingNote": "Select 11–18 February 2027 for 2 adults on Iberostar’s website.",
       "reviewStartOn": "2026-11-20",
       "affiliate": true,
@@ -110,7 +110,8 @@
       "reviewStartOn": "2026-11-19",
       "lastVerified": "2026-11-19",
       "destination": "Maldives",
-      "checkOut": "2027-06-19"
+      "checkOut": "2027-06-19",
+      "bookingLabel": "Check availability with JOALI"
     },
     {
       "title": "Kantary Bay Hotel Phuket",
@@ -132,9 +133,9 @@
         }
       ],
       "location": "Long-stay offer · Easter · Cape Panwa, Phuket, Thailand",
-      "price": "€1,780 total for 2 adults · 14 nights",
+      "price": "€1,916 total for 2 adults · 14 nights",
       "description": "15–29 March 2027 · One-Bedroom Suite with a balcony and breakfast included. Late March is still high season in Phuket, near the end of the dry season. The weather is usually warm with plenty of sunshine, and hotel rates and crowds can ease compared with the December–February peak as the wet season approaches.",
-      "priceNote": "Flexible to reschedule if plans change. The rate is non-refundable and payable online. Booking.com showed €1,780 including taxes and fees on 18 November 2026, down from its displayed reference price of €3,181 (about 44% lower). Price, availability and terms may change.",
+      "priceNote": "Booking.com showed €1,916 including taxes and fees on 24 November 2026, against its displayed reference price of €3,194. The suite included breakfast and allowed date changes. Payment was online and the rate was non-refundable. The earlier quote on 18 November was €1,780.",
       "bookingUrl": "https://www.booking.com/hotel/th/kantary-bay.en-gb.html?checkin=2027-03-15&checkout=2027-03-29&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
       "recommendedFor": "A quiet holiday spot to unwind and escape the crowds",
       "highlightsLabel": "Highlight:",
@@ -143,7 +144,7 @@
       ],
       "checkIn": "2027-03-15",
       "reviewStartOn": "2026-11-18",
-      "lastVerified": "2026-11-18",
+      "lastVerified": "2026-11-24",
       "stayNote": "Kantary Bay is a quiet bayfront retreat.\nVillage restaurants and an evening market are a short walk away.\nI took the free shuttle to Cape Panwa Hotel, then rode the funicular down to its private beach.",
       "destination": "Thailand",
       "checkOut": "2027-03-29"
@@ -244,14 +245,13 @@
     {
       "title": "Vilamendhoo Island Resort & Spa",
       "location": "May 2027 · Maldives",
-      "price": "€2,433 for the 7-night hotel stay · 2 adults, full board · seaplane transfer extra",
+      "price": "Earlier quote: €2,433 for the 7-night hotel stay · 2 adults, full board · seaplane transfer extra",
       "description": "15–22 May 2027 · Adjacent Beachfront Villa with sea view · Full board included.",
-      "priceNote": "Booking.com Partner Offer including taxes and fees. Advance payment required. Booking changes unavailable. Price and availability may change. Check the seaplane transfer cost separately.",
+      "priceNote": "The €2,433 Partner Offer was seen on 18 November and could not be reconfirmed on 24 November. On 24 November, Booking.com displayed a separate €2,740 members-only full-board rate with free cancellation before 12 May 2027. Booking.com listed the round-trip seaplane separately at US$400 per adult, payable at the resort.",
       "discoveryPage": "vilamendhoo.html",
       "checkIn": "2027-05-15",
       "reviewStartOn": "2026-11-11",
       "lastVerified": "2026-11-18",
-      "cancellationCutoff": "2027-05-12",
       "bookingUrl": "https://www.booking.com/hotel/mv/vilamendhoo-island-resort-amp-spa.html?checkin=2027-05-15&checkout=2027-05-22&group_adults=2&group_children=0&no_rooms=1",
       "destination": "Maldives",
       "checkOut": "2027-05-22",
@@ -265,7 +265,7 @@
       "highlights": [
         "House reef snorkeling"
       ],
-      "highlightsLabel": "Recommended for:"
+      "highlightsLabel": "Highlights:"
     },
     {
       "title": "Riu Jambo Zanzibar",

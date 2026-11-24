@@ -57,6 +57,7 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
       image.loading = "lazy";
       link.append(image);
       card.append(link);
+      appendText(card, "p", "Affiliate banner · CHH may earn a commission.", "small");
     }
   }
 
@@ -184,7 +185,9 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
     else if (hasDiscovery && !onFeature) link.className = "deal-booking-link";
     if (!onFeature || deal.affiliate === true) link.rel = "sponsored";
     const defaultBookingLabel = deal.affiliate === true || compact ? "View offer" : onFeature ? "Check availability →" : "View hotel →";
-    link.textContent = deal.bookingLabel || defaultBookingLabel;
+    const providerLabel = ["www.booking.com", "booking.com"].includes(bookingUrl.hostname)
+      ? "Check availability on Booking.com" : defaultBookingLabel;
+    link.textContent = deal.bookingLabel || providerLabel;
     card.append(link);
     appendText(card, "p", deal.bookingNote, "small");
 
