@@ -100,14 +100,19 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
     const end = parseDate(deal.checkOut);
     if (start) appendText(card, "p", end && end > start ? stayDates.formatRange(start, end) : displayDate(deal.checkIn), "finds-dates");
     if (!start && status.historical) appendText(card, "p", deal.description, "finds-dates");
-    appendText(card, "div", deal.price, "price");
+  } else if (hasDiscovery) {
+    appendText(card, "p", deal.description, "deal-description");
+  }
+  appendText(card, "div", deal.price, "price");
+  if (deal.price && status.lastVerified) {
+    appendText(card, "p", `Price seen on ${displayDate(status.lastVerified)}`, "small");
+  }
+  if (compact) {
     const highlight = Array.isArray(deal.highlights) ? deal.highlights[0] : "";
     appendText(card, "p", highlight || deal.recommendedFor, "finds-highlight");
     if (start || !status.historical) appendText(details, "p", deal.description, "deal-description");
-  } else {
-    if (hasDiscovery) appendText(card, "p", deal.description, "deal-description");
-    appendText(card, "div", deal.price, "price");
-    if (!hasDiscovery) appendText(card, "p", deal.description, "deal-description");
+  } else if (!hasDiscovery) {
+    appendText(card, "p", deal.description, "deal-description");
   }
   if (status.showCancellation) {
     appendText(details, "p", `Free cancellation before ${displayDate(status.cancellationCutoff)}.`);
@@ -131,9 +136,6 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
     details.append(list);
   }
   appendText(details, "p", deal.priceNote, "small");
-  if (!status.historical && status.lastVerified) {
-    appendText(details, "p", `Last checked ${displayDate(status.lastVerified)}`, "small");
-  }
 
   if (!onFeature && typeof deal.recommendedFor === "string" && deal.recommendedFor.trim()) {
     appendText(details, "strong", "Recommended for:");

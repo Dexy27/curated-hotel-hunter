@@ -12,11 +12,11 @@
       "noPrepayment": true,
       "priceDetails": [
         {
-          "lead": "Save €946 (about 30%).",
-          "detail": "Booking.com displayed €3,181 as the reference price."
+          "lead": "Booking.com showed €2,235 for two adults, all-inclusive, on 20 November 2026.",
+          "detail": "Its displayed reference price was €3,181."
         }
       ],
-      "priceNote": "Unbeatable price for an all-inclusive beachfront resort with a private beach in Dubai. The €2,235 rate includes taxes and fees. Price, availability and terms may change.",
+      "priceNote": "The €2,235 rate included taxes and fees. Price, availability and terms may change.",
       "bookingUrl": "https://www.booking.com/hotel/ae/riu-dubai-all-inclusive.html?checkin=2027-04-30&checkout=2027-05-07&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
       "bookingLabel": "Check availability on Booking.com",
       "discoveryPage": "riu-dubai.html",
@@ -76,23 +76,20 @@
     {
       "title": "JOALI BEING",
       "location": "Raa Atoll, Maldives",
-      "price": "Approx. €13,200 total for 2 adults · 7 nights",
+      "price": "Approx. €13,200 for the 7-night hotel stay · 2 adults, half board · seaplane transfers extra",
       "description": "12–19 June 2027 · Ocean Pool Villa · Advance Purchase with Half Board.",
       "priceDetails": [
         {
-          "lead": "About €7,650 less booking direct.",
+          "lead": "The direct quote was about €7,650 lower when checked on 19 November 2026.",
           "detail": "Booking.com showed €20,857 for the same Ocean Pool Villa, 12–19 June 2027, for two adults with breakfast and dinner."
-        },
-        {
-          "lead": "JOALI’s exact quote was US$14,477.17,",
-          "detail": "including taxes and fees. The Booking.com price also included taxes and charges."
         },
         {
           "lead": "JOALI requires a 25% deposit,",
           "detail": "with the balance due 30 days before arrival. The Booking.com rate was non-refundable, with rescheduling available."
         },
         {
-          "lead": "Seaplane transfers are priced separately."
+          "lead": "JOALI’s exact quote was US$14,477.17,",
+          "detail": "including taxes and fees. The Booking.com price also included taxes and charges."
         }
       ],
       "priceNote": "Prices checked on 19 November 2026 and subject to change. Euro estimate based on the ECB rate on 18 November 2026 (€1 = US$1.0968).",
@@ -247,7 +244,7 @@
     {
       "title": "Vilamendhoo Island Resort & Spa",
       "location": "May 2027 · Maldives",
-      "price": "€2,433 total for 2 adults · 7 nights",
+      "price": "€2,433 for the 7-night hotel stay · 2 adults, full board · seaplane transfer extra",
       "description": "15–22 May 2027 · Adjacent Beachfront Villa with sea view · Full board included.",
       "priceNote": "Booking.com Partner Offer including taxes and fees. Advance payment required. Booking changes unavailable. Price and availability may change. Check the seaplane transfer cost separately.",
       "discoveryPage": "vilamendhoo.html",
