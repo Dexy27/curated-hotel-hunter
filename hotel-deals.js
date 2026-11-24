@@ -37,6 +37,10 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
     appendText(card, "h3", deal.title);
   }
 
+  if (deal.firsthand === true || ["vilamendhoo.html", "ao-prao-koh-samet.html", "riu-jambo-zanzibar.html"].includes(deal.discoveryPage)) {
+    appendText(card, "span", "Personally visited", "visited-badge");
+  }
+
   if (!onFeature && deal.banner) {
     const imageUrl = parseUrl(deal.banner.image, window.location.origin);
     const targetUrl = typeof deal.banner.url === "string" ? parseUrl(deal.banner.url) : null;
