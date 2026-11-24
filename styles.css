@@ -316,3 +316,5 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.visited-badge{display:inline-block;width:fit-content;max-width:100%;box-sizing:border-box;padding:.3em .65em;margin:0 0 .5rem;border:1px solid #637c65;border-radius:6px;background:#edf3eb;color:#36563b;font-size:.78rem;font-weight:700;line-height:1.4;letter-spacing:.025em;}
