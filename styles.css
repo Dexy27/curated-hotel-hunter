@@ -316,3 +316,5 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.visited-badge{display:inline-block;border:1px solid #b98b79;border-radius:3px;padding:3px 8px;margin:4px 0;color:#74594d;background:#faf7f2;font:600 11px/1.5 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;width:fit-content}.personally-visited{scroll-margin-top:140px}
