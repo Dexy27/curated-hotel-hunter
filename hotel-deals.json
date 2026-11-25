@@ -134,7 +134,7 @@
       "location": "Long-stay offer · Easter · Cape Panwa, Phuket, Thailand",
       "price": "€1,778 total for 2 adults · 14 nights",
       "description": "15–29 March 2027 · One-Bedroom Suite with a balcony and breakfast included. Late March is still high season in Phuket, near the end of the dry season. The weather is usually warm with plenty of sunshine, and hotel rates and crowds can ease compared with the December–February peak as the wet season approaches.",
-      "priceNote": "Semi-flexible rate: non-refundable, payable online, with rescheduling available if plans change. Includes breakfast, taxes and fees. Booking.com price checked on 25 November 2026. Price, availability and terms may change.",
+      "priceNote": "Booking.com prices checked on 25 November 2026. Price, availability and terms may change.",
       "bookingUrl": "https://www.booking.com/hotel/th/kantary-bay.en-gb.html?checkin=2027-03-15&checkout=2027-03-29&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
       "recommendedFor": "A quiet holiday spot to unwind and escape the crowds",
       "highlightsLabel": "Highlight:",
@@ -148,6 +148,10 @@
       "destination": "Thailand",
       "checkOut": "2027-03-29",
       "priceDetails": [
+        {
+          "lead": "Semi-flexible rate: non-refundable, payable online.",
+          "detail": "Rescheduling available if plans change. Breakfast, taxes and fees included."
+        },
         {
           "lead": "Fully flexible alternative: €2,074 (mobile-only price).",
           "detail": "Same One-Bedroom Suite with breakfast. Free cancellation before 22 February 2027; pay nothing until 20 February 2027."
