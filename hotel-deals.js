@@ -228,7 +228,7 @@ const monthLabels = new Intl.DateTimeFormat("en-GB", {
   month: "long", year: "numeric", timeZone: "UTC",
 });
 const pageSize = 12;
-const featuredOfferIds = ["iberostar-selection-zanzibar", "joali-being"];
+const featuredOfferIds = ["iberostar-selection-zanzibar", "iberostar-waves-punta-cana", "joali-being"];
 
 function parseDate(value) {
   if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
