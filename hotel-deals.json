@@ -280,15 +280,15 @@
     {
       "title": "Riu Jambo Zanzibar",
       "location": "August 2027 · Zanzibar",
-      "price": "€2,675 total for 2 adults · 7 nights",
+      "price": "€2,684 total for 2 adults · 7 nights",
       "description": "14–21 August 2027 · All-inclusive · Garden-view Double Room with a balcony and two twin beds.",
       "noPrepayment": true,
-      "priceNote": "Booking.com displayed €3,795 as its reference price. The €2,675 rate includes taxes and fees. Price, availability and terms may change.",
+      "priceNote": "Booking.com Black Friday Deal. The €2,684 rate includes taxes and fees. Price, availability and terms may change.",
       "discoveryPage": "riu-jambo-zanzibar.html",
       "checkIn": "2027-08-14",
       "reviewStartOn": "2026-11-11",
-      "lastVerified": "2026-11-18",
-      "cancellationCutoff": "2027-08-13",
+      "lastVerified": "2026-11-25",
+      "cancellationCutoff": "2027-08-12",
       "bookingUrl": "https://www.booking.com/hotel/tz/riu-jambo.en-gb.html?checkin=2027-08-14&checkout=2027-08-21&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
       "destination": "Tanzania",
       "checkOut": "2027-08-21",
@@ -303,7 +303,14 @@
         "All-day sea swimming",
         "Exceptional food in the main restaurant"
       ],
-      "highlightsLabel": "Highlights:"
+      "highlightsLabel": "Highlights:",
+      "priceDetails": [
+        {
+          "lead": "Save €1,122 (about 29.5%).",
+          "detail": "Booking.com displayed €3,806 as the reference price."
+        }
+      ],
+      "valueNote": "An excellent price for this beachfront all-inclusive resort in Zanzibar. Having personally stayed here, I highly recommend it at this price. The fully flexible booking conditions make this offer even more attractive."
     },
     {
       "title": "Ao Prao Resort Koh Samet",
