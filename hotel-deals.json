@@ -65,7 +65,9 @@
       "checkOut": "2027-02-18",
       "lastVerified": "2026-11-25",
       "destination": "Tanzania",
-      "bookingCutoff": "2026-12-02"
+      "bookingCutoff": "2026-12-02",
+      "directBookingUrl": "https://www.iberostar.com/eu/black-friday/",
+      "directBookingLabel": "Open directly on Iberostar"
     },
     {
       "title": "Iberostar Waves Punta Cana",
@@ -101,7 +103,9 @@
       "checkOut": "2027-02-18",
       "bookingCutoff": "2026-12-02",
       "reviewStartOn": "2026-11-25",
-      "lastVerified": "2026-11-25"
+      "lastVerified": "2026-11-25",
+      "directBookingUrl": "https://www.iberostar.com/eu/black-friday/",
+      "directBookingLabel": "Open directly on Iberostar"
     },
     {
       "title": "JOALI BEING",

@@ -186,6 +186,16 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
     const defaultBookingLabel = deal.affiliate === true || compact ? "View offer" : onFeature ? "Check availability →" : "View hotel →";
     link.textContent = deal.bookingLabel || defaultBookingLabel;
     card.append(link);
+    const directUrl = typeof deal.directBookingUrl === "string" ? parseUrl(deal.directBookingUrl) : null;
+    if (directUrl?.protocol === "https:" && deal.directBookingLabel) {
+      const direct = document.createElement("a");
+      direct.href = directUrl.href;
+      direct.textContent = deal.directBookingLabel;
+      direct.dataset.analyticsHotel = deal.title;
+      const paragraph = document.createElement("p");
+      paragraph.append(direct);
+      card.append(paragraph);
+    }
     appendText(card, "p", deal.bookingNote, "small");
 
     if (typeof deal.bookingQr === "string") {
