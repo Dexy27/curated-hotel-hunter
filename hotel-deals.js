@@ -95,8 +95,8 @@ function makeDealCard(deal, status, onFeature = false, compact = false) {
 
   const discoveryPage = typeof deal.discoveryPage === "string" ? deal.discoveryPage.trim() : "";
   const hasDiscovery = /^[a-z0-9-]+\.html$/.test(discoveryPage);
+  const start = parseDate(deal.checkIn);
   if (compact) {
-    const start = parseDate(deal.checkIn);
     const end = parseDate(deal.checkOut);
     if (start) appendText(card, "p", end && end > start ? stayDates.formatRange(start, end) : displayDate(deal.checkIn), "finds-dates");
     if (!start && status.historical) appendText(card, "p", deal.description, "finds-dates");
@@ -368,7 +368,12 @@ function renderHotelFinds(deals, visibleDeals) {
       for (let number = 1; number <= pageCount; number++) pageButton(String(number), number, number === page);
       pageButton("Next", page + 1, page === pageCount);
     }
-    if (targetIndex >= 0) document.getElementById(initialTarget.id)?.scrollIntoView();
+    if (targetIndex >= 0) {
+      const target = document.getElementById(initialTarget.id);
+      const details = target?.querySelector(":scope > details");
+      if (details) details.open = true;
+      target?.scrollIntoView();
+    }
   }
 
   function applyFilters() {
