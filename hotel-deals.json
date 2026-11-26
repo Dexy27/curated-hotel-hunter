@@ -4,7 +4,7 @@
       "title": "Riu Dubai Beach Resort",
       "location": "May Day holiday in Dubai",
       "destination": "Dubai",
-      "price": "€2,235 total for 2 adults · 7 nights",
+      "price": "€2,242 total for 2 adults · 7 nights",
       "description": "30 April–7 May 2027 · Double Room with Partial Sea View · All-inclusive.",
       "checkIn": "2027-04-30",
       "checkOut": "2027-05-07",
@@ -12,12 +12,16 @@
       "noPrepayment": true,
       "priceDetails": [
         {
-          "lead": "Booking.com showed €2,235 for two adults, all-inclusive, on 20 November 2026.",
-          "detail": "Its displayed reference price was €3,181."
+          "lead": "€2,242 flexible Black Friday rate.",
+          "detail": "Free cancellation before 28 April 2027. No prepayment needed. Pay at the property."
+        },
+        {
+          "lead": "€2,103 non-refundable alternative.",
+          "detail": "Pay online and save €139 for the same room and all-inclusive stay."
         }
       ],
-      "priceNote": "The €2,235 rate included taxes and fees. Price, availability and terms may change.",
-      "bookingUrl": "https://www.booking.com/hotel/ae/riu-dubai-all-inclusive.html?checkin=2027-04-30&checkout=2027-05-07&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
+      "priceNote": "Both totals include taxes and fees. Prices and availability may change.",
+      "bookingUrl": "https://www.dpbolvw.net/click-101924313-15734849?url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fae%2Friu-dubai-all-inclusive.html%3Fcheckin%3D2027-04-30%26checkout%3D2027-05-07%26group_adults%3D2%26group_children%3D0%26no_rooms%3D1%26selected_currency%3DEUR",
       "bookingLabel": "Check availability on Booking.com",
       "discoveryPage": "riu-dubai.html",
       "firsthand": true,
@@ -34,7 +38,8 @@
       ],
       "highlightsLabel": "Highlights:",
       "reviewStartOn": "2026-11-21",
-      "lastVerified": "2026-11-20"
+      "lastVerified": "2026-11-26",
+      "affiliate": true
     },
     {
       "title": "Iberostar Selection Zanzibar",
