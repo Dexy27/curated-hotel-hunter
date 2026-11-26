@@ -32,7 +32,24 @@
       "bookingCutoff": "2026-12-02",
       "reviewStartOn": "2026-11-26",
       "lastVerified": "2026-11-26",
-      "highlightsLabel": "From our stay:"
+      "highlightsLabel": "From our stay:",
+      "photos": [
+        {
+          "image": "/deal-photos/villa-park-2018-beach.webp",
+          "alt": "Palm trees and thatched parasols beside the white-sand beach",
+          "caption": "Photos from our stay in 2018. Some parts of the resort may have changed since then."
+        },
+        {
+          "image": "/deal-photos/villa-park-2018-jetty.webp",
+          "alt": "A long jetty crossing the turquoise lagoon",
+          "caption": "The jetty across the lagoon, 2018."
+        },
+        {
+          "image": "/deal-photos/villa-park-2018-pool.webp",
+          "alt": "Palm trees surrounding the pool with the ocean beyond",
+          "caption": "The palm-lined pool, 2018."
+        }
+      ]
     },
     {
       "title": "Riu Dubai Beach Resort",
