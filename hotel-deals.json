@@ -106,23 +106,23 @@
     {
       "title": "JOALI BEING",
       "location": "Raa Atoll, Maldives",
-      "price": "Approx. €13,200 for the 7-night hotel stay · 2 adults, half board · seaplane transfers extra",
+      "price": "US$14,477.17 (approx. €13,239) · 7 nights for 2 adults, half board · seaplane transfers extra",
       "description": "12–19 June 2027 · Ocean Pool Villa · Advance Purchase with Half Board.",
       "priceDetails": [
         {
-          "lead": "The direct quote was about €7,650 lower when checked on 19 November 2026.",
-          "detail": "Booking.com showed €20,857 for the same Ocean Pool Villa, 12–19 June 2027, for two adults with breakfast and dinner."
+          "lead": "JOALI’s checkout showed US$14,477.17 on 26 November 2026.",
+          "detail": "The villa was US$11,118.24 plus US$3,358.93 in taxes and fees."
         },
         {
-          "lead": "JOALI requires a 25% deposit,",
-          "detail": "with the balance due 30 days before arrival. The Booking.com rate was non-refundable, with rescheduling available."
+          "lead": "JOALI’s previously checked payment terms required a 25% deposit,",
+          "detail": "with the balance due 30 days before arrival."
         },
         {
-          "lead": "JOALI’s exact quote was US$14,477.17,",
-          "detail": "including taxes and fees. The Booking.com price also included taxes and charges."
+          "lead": "Booking.com comparison from 19 November 2026:",
+          "detail": "€20,857 including taxes and charges for the same villa, dates and half board for two. That rate was non-refundable, with rescheduling available."
         }
       ],
-      "priceNote": "Prices checked on 19 November 2026 and subject to change. Euro estimate based on the ECB rate on 18 November 2026 (€1 = US$1.0968).",
+      "priceNote": "Euro estimate based on the 25 November 2026 ECB reference rate (€1 = US$1.0935). Prices and availability may change.",
       "highlights": [
         "Overwater villa with a private pool",
         "Daily breakfast and dinner included"
@@ -138,7 +138,7 @@
       "checkIn": "2027-06-12",
       "cancellationCutoff": "2027-05-13",
       "reviewStartOn": "2026-11-19",
-      "lastVerified": "2026-11-19",
+      "lastVerified": "2026-11-26",
       "destination": "Maldives",
       "checkOut": "2027-06-19"
     },
