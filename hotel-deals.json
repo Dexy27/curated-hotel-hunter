@@ -247,7 +247,7 @@
         }
       ],
       "priceNote": "Public Booking.com rate including taxes and fees. No payment due until 8 February 2027. Price, availability and terms may change.",
-      "bookingUrl": "https://www.booking.com/hotel/do/punta-cana-princess.html?checkin=2027-02-11&checkout=2027-02-18&group_adults=2&group_children=0&no_rooms=1&selected_currency=EUR",
+      "bookingUrl": "https://www.dpbolvw.net/click-101924313-15734849?url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fdo%2Fpunta-cana-princess.html%3Fcheckin%3D2027-02-11%26checkout%3D2027-02-18%26group_adults%3D2%26group_children%3D0%26no_rooms%3D1%26selected_currency%3DEUR",
       "discoveryPage": "punta-cana-princess.html",
       "photos": [
         {
@@ -267,7 +267,8 @@
       "lastVerified": "2026-11-23",
       "cancellationCutoff": "2027-02-10",
       "destination": "Dominican Republic",
-      "checkOut": "2027-02-18"
+      "checkOut": "2027-02-18",
+      "affiliate": true
     },
     {
       "title": "Curaçao Avila Beach Hotel",
