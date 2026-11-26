@@ -1,6 +1,37 @@
 {
   "deals": [
     {
+      "title": "Villa Park Sun Island Resort",
+      "location": "May Day week · Maldives",
+      "destination": "Maldives",
+      "price": "€4,019 mobile price for 2 adults · 7 nights",
+      "description": "25 April–2 May 2027 · 73 m² Water Villa · Full board.",
+      "priceDetails": [
+        {
+          "lead": "€4,019 full board.",
+          "detail": "Breakfast, lunch and dinner included."
+        },
+        {
+          "lead": "€5,809 all-inclusive.",
+          "detail": "Same Water Villa and dates, €1,790 more for two."
+        }
+      ],
+      "priceNote": "Booking.com Black Friday prices seen on mobile, including taxes and fees. Both rates offer free cancellation before 18 April 2027. Pay nothing until 16 April 2027. Confirm transfer costs separately.",
+      "highlights": [
+        "Seven nights in an overwater villa",
+        "Full board with an all-inclusive option"
+      ],
+      "bookingUrl": "https://www.kqzyfj.com/click-101924313-15734849?url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fmv%2Fsun-island-resort-spa.html%3Fcheckin%3D2027-04-25%26checkout%3D2027-05-02%26group_adults%3D2%26group_children%3D0%26no_rooms%3D1%26selected_currency%3DEUR",
+      "affiliate": true,
+      "firsthand": true,
+      "checkIn": "2027-04-25",
+      "checkOut": "2027-05-02",
+      "cancellationCutoff": "2027-04-18",
+      "bookingCutoff": "2026-12-02",
+      "reviewStartOn": "2026-11-26",
+      "lastVerified": "2026-11-26"
+    },
+    {
       "title": "Riu Dubai Beach Resort",
       "location": "May Day holiday in Dubai",
       "destination": "Dubai",
