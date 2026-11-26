@@ -313,7 +313,7 @@
       "price": "€1,110 total for 2 adults · 7 nights",
       "description": "24–31 March 2027 · Ocean View Deluxe-Hillside room (45 m²) with a balcony and sea view. Breakfast included.",
       "priceNote": "Booking.com prices checked on 25 November 2026. Price, availability and terms may change.",
-      "bookingUrl": "https://www.booking.com/hotel/th/kc-grande-resort-spa.en-gb.html?checkin=2027-03-24&checkout=2027-03-31&group_adults=2&no_rooms=1&group_children=0&selected_currency=EUR",
+      "bookingUrl": "https://www.jdoqocy.com/click-101924313-15734849?url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fkc-grande-resort-spa.en-gb.html%3Fcheckin%3D2027-03-24%26checkout%3D2027-03-31%26group_adults%3D2%26no_rooms%3D1%26group_children%3D0%26selected_currency%3DEUR",
       "checkIn": "2027-03-24",
       "reviewStartOn": "2026-11-11",
       "lastVerified": "2026-11-25",
@@ -328,7 +328,8 @@
           "lead": "Flexible alternative · €1,243",
           "detail": "Same ocean-view room with breakfast, taxes and fees included. Free cancellation before 10 March 2027. Pay the property before arrival."
         }
-      ]
+      ],
+      "affiliate": true
     },
     {
       "title": "Vilamendhoo Island Resort & Spa",
